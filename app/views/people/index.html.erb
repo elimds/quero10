@@ -6,24 +6,24 @@
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-th-list"></i> Lista de People</h3>
+            <h3><i class="icon-th-list"></i> Lista de Pessoas</h3>
         </div>
         <div class="well no-padding">
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th><%= sortable 'name' %></th>
-                                                    <th><%= sortable 'email' %></th>
-                                                    <th><%= sortable 'lattes' %></th>
-                                                    <th><%= sortable 'phone' %></th>
-                                                    <th><%= sortable 'mobile_phone' %></th>
+                                                    <th>Nome</th>
+                                                    <th>E-mail</th>
+                                                    <th>Lattes</th>
+                                                    <th>Telefone</th>
+                                                    <th>Celular</th>
                                                 <th></th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <%= @people.each do |person| %>
+                    <% @people.each do |person| %>
                         <tr>
                                                             <td><%= person.name %></td>
                                                             <td><%= person.email %></td>

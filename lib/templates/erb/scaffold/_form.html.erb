@@ -1,11 +1,11 @@
 <div class="well no-padding">
     <%%= form_for(@<%= singular_table_name %>, :html => { class: 'form-horizontal' }) do |f| %>
         
-        <%%= if @<%= singular_table_name %>.errors.any? %>
+        <%% if @<%= singular_table_name %>.errors.any? %>
             <div class="alert alert-error">
                 <h4><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this pessoa from being saved:</h4>
                 <ul>
-                    <%%= @<%= singular_table_name %>.errors.full_messages.each do |message| %>
+                    <%% @<%= singular_table_name %>.errors.full_messages.each do |message| %>
                         <li><%%= message %></li>
                     <%% end %>
                 </ul>
@@ -22,7 +22,7 @@
         <% end -%>
     
         <div class="form-actions">
-            <%%= f.submit 'Cadastrar' class: 'btn btn-primary' %>
+            <%%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
         </div>
     <%% end %>
 </div>
