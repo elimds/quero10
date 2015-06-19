@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :great_areas
   resources :institutes
   resources :people
   # The priority is based upon order of creation: first created -> highest priority.
