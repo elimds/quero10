@@ -1,24 +1,36 @@
+***
+**quero10**
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Sistema para Gerenciamento de Projetos de Pesquisa.
 
+[quero10.herokuapp.com](http://quero10.herokuapp.com)
 
-Welcome to your Rails project on Cloud9 IDE!
+***
 
-To get started, just do the following:
+**Disciplina:**
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://quero10-v2-elimds1.c9.io/).
+Engenharia de Software (MPI906)
 
-Happy coding!
-The Cloud9 IDE team
+**Professor:**
 
+Vinicius Cardoso Garcia
 
-## Support & Documentation
+***
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+**Mestrandos:**
+* Ana Raquel Marinho Correia
+* Anderson Maia de Albuquerque
+* Carine Calixto Aguena
+* Eli Medeiros Sousa
+* Karina Moreira Azevedo
+* Paulo Roberto de Souza Mesquita Jr
+* Vanessa Cristine Silva
+
+***
+
+**Artefatos:**
+* [Requisitos](https://docs.google.com/a/cin.ufpe.br/document/d/1NFqAcbee1Us253wxi_2bKlWiC80xiLe_xUHz_sLjr7o/edit?usp=sharing)
+
+* [Protótipos](https://drive.google.com/a/cin.ufpe.br/folderview?id=0BySLCnJXuwJWflM1akk1QUNURTZ3SXFpMUhCaE5PME52aHlPeDdyUzVaTlVmUDhfbUdKQkE&usp=sharing)
+
+* [Questionário] (https://docs.google.com/a/cin.ufpe.br/forms/d/1tROyTvhaTV464EBkh7uQq0qBtjHwclyXw2g-M-AWx2k/edit)
