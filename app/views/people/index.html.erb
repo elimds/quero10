@@ -1,0 +1,42 @@
+<div class="row-fluid link-cadastro">
+    <%= link_to new_person_path do %>
+        <i class="icon-plus"></i> Adicionar Pessoa
+    <% end %>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-th-list"></i> Lista de People</h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                                                    <th><%= sortable 'name' %></th>
+                                                    <th><%= sortable 'email' %></th>
+                                                    <th><%= sortable 'lattes' %></th>
+                                                    <th><%= sortable 'phone' %></th>
+                                                    <th><%= sortable 'mobile_phone' %></th>
+                                                <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%= @people.each do |person| %>
+                        <tr>
+                                                            <td><%= person.name %></td>
+                                                            <td><%= person.email %></td>
+                                                            <td><%= person.lattes %></td>
+                                                            <td><%= person.phone %></td>
+                                                            <td><%= person.mobile_phone %></td>
+                                                        <td><%= link_to 'Visualizar', person %></td>
+                            <td><%= link_to 'Editar', edit_person_path(person), class: 'btn btn-edit' %></td>
+                            <td><%= link_to 'Deletar', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-destroy' %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

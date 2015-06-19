@@ -1,0 +1,38 @@
+<div class="row-fluid link-cadastro">
+    <%%= link_to new_<%= singular_table_name %>_path do %>
+        <i class="icon-plus"></i> Adicionar Pessoa
+    <%% end %>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-th-list"></i> Lista de <%= plural_table_name.capitalize %></h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <% attributes.each do |attribute| -%>
+                            <th><%%= sortable '<%= attribute.name %>' %></th>
+                        <% end -%>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%%= @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+                        <tr>
+                            <% attributes.each do |attribute| -%>
+                                <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+                            <% end -%>
+                            <td><%%= link_to 'Visualizar', <%= singular_table_name %> %></td>
+                            <td><%%= link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-edit' %></td>
+                            <td><%%= link_to 'Deletar', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-destroy' %></td>
+                        </tr>
+                    <%% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
