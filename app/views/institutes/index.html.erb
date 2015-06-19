@@ -39,8 +39,8 @@
                                                             <td><%= institute.phone %></td>
                                                             <td><%= institute.person %></td>
                                                         <td><%= link_to 'Visualizar', institute %></td>
-                            <td><%= link_to 'Editar', edit_institute_path(institute), class: 'btn btn-edit' %></td>
-                            <td><%= link_to 'Deletar', institute, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-destroy' %></td>
+                            <td><%= link_to 'Editar', edit_institute_path(institute) %></td>
+                            <td><%= link_to 'Deletar', institute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>
                     <% end %>
                 </tbody>

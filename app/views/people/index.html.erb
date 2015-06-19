@@ -31,8 +31,8 @@
                                                             <td><%= person.phone %></td>
                                                             <td><%= person.mobile_phone %></td>
                                                         <td><%= link_to 'Visualizar', person %></td>
-                            <td><%= link_to 'Editar', edit_person_path(person), class: 'btn btn-edit' %></td>
-                            <td><%= link_to 'Deletar', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-destroy' %></td>
+                            <td><%= link_to 'Editar', edit_person_path(person) %></td>
+                            <td><%= link_to 'Deletar', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>
                     <% end %>
                 </tbody>

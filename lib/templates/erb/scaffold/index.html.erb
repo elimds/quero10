@@ -27,8 +27,8 @@
                                 <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
                             <% end -%>
                             <td><%%= link_to 'Visualizar', <%= singular_table_name %> %></td>
-                            <td><%%= link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-edit' %></td>
-                            <td><%%= link_to 'Deletar', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-destroy' %></td>
+                            <td><%%= link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+                            <td><%%= link_to 'Deletar', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>
                     <%% end %>
                 </tbody>

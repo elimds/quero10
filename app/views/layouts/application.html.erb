@@ -1,14 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>.:: Quero 10 ::.</title>
+  <%= favicon_link_tag 'favicon.png' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <!-- Top Fixed Bar -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+
+		<!-- Top Fixed Bar: Navbar Inner -->
+		<div class="navbar-inner">
+
+			<!-- Top Fixed Bar: Container -->
+			<div class="container">
+
+				<!-- Mobile Menu Button -->
+				<a href="#">
+					<button type="button" class="btn btn-navbar mobile-menu">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</a>
+				<!-- / Mobile Menu Button -->
+
+				<!-- / Logo / Brand Name -->
+				<a class="brand" href="#"><%= image_tag("logo-topo.png", width: 40, height: 40) %></a>
+				<!-- / Logo / Brand Name -->
+
+				<!-- User Navigation -->
+				<ul class="nav pull-right">
+
+					<!-- User Navigation: User -->
+					<li class="dropdown">
+
+						<!-- User Navigation: User Link -->
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-user icon-white"></i> 
+							<span class="hidden-phone">Anderson Maia</span>
+						</a>
+						<!-- / User Navigation: User Link -->
+
+						<!-- User Navigation: User Dropdown -->
+						<ul class="dropdown-menu">
+							<li><a href="#"><i class="icon-user"></i> Alterar Perfil</a></li>
+						</ul>
+						<!-- / User Navigation: User Dropdown -->
+
+					</li>
+					<!-- / User Navigation: User -->
+					
+					<!-- User Navigation: Logout -->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle">
+							<i class="icon-off icon-white"></i> 
+							<span class="hidden-phone">Logout</span>
+						</a>
+					</li>
+					<!-- / User Navigation: Logout -->
+
+				</ul>
+				<!-- / User Navigation -->
+
+			</div>
+			<!-- / Top Fixed Bar: Container -->
+
+		</div>
+		<!-- / Top Fixed Bar: Navbar Inner -->
+
+	</div>
+	<!-- / Top Fixed Bar -->
+	
+	<!-- Content Container -->
+	<div class="container">
+	  <!-- Main Navigation: Box -->
+		<div class="navbar navbar-inverse" id="nav">
+
+			<!-- Main Navigation: Inner -->
+			<div class="navbar-inner">
+
+				<!-- Main Navigation: Nav -->
+				<ul class="nav">
+
+					<!-- Main Navigation: Pessoas -->
+          <li class="active">
+            <%= link_to people_path do %>
+              <i class="icon-group"></i> Pessoas
+            <% end %>
+          </li>
+					<!-- / Main Navigation: Pessoas -->
+					
+					<!-- Main Navigation: Instituições -->
+          <li class="active">
+            <%= link_to institutes_path do %>
+              <i class="icon-building"></i> Instituições
+            <% end %>
+          </li>
+					<!-- / Main Navigation: Instituições -->
+
+				</ul>
+				<!-- / Main Navigation: Nav -->
+
+			</div>
+			<!-- / Main Navigation: Inner -->
+
+		</div>
+		<!-- / Main Navigation: Box -->
+	  
+    <%= yield %>
+    
+  </div>
+  <!-- / Content Container -->
+  
+  <!-- Footer -->
+	<footer class="footer">
+
+			<!-- Footer Container -->
+      <div class="container">
+        <p>Projetos de Pesquisa Quero 10</p>
+        <p>Github: <a href="https://github.com/elimds/quero10">https://github.com/elimds/quero10</a></p>
+      </div>
+      <!-- / Footer Container -->
+
+	</footer>
+	<!-- / Footer -->
 
 </body>
 </html>
