@@ -1,0 +1,66 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-list-alt"></i> Visualizar Institute</h3>
+        </div>
+        <div class="well no-padding">
+            <% unless notice.nil? %>
+                <div class="alert"><%= notice %></div>
+            <% end %>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">Name:</label>
+                <div class="controls">
+                    <%= @institute.name %>
+                </div>
+            </div>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">Address:</label>
+                <div class="controls">
+                    <%= @institute.address %>
+                </div>
+            </div>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">Number:</label>
+                <div class="controls">
+                    <%= @institute.number %>
+                </div>
+            </div>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">District:</label>
+                <div class="controls">
+                    <%= @institute.district %>
+                </div>
+            </div>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">City:</label>
+                <div class="controls">
+                    <%= @institute.city %>
+                </div>
+            </div>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">State:</label>
+                <div class="controls">
+                    <%= @institute.state %>
+                </div>
+            </div>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">Zip code:</label>
+                <div class="controls">
+                    <%= @institute.zip_code %>
+                </div>
+            </div>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">Phone:</label>
+                <div class="controls">
+                    <%= @institute.phone %>
+                </div>
+            </div>
+            <div class="control-group span12 no-margin-left">
+                <label class="control-label">Person:</label>
+                <div class="controls">
+                    <%= @institute.person %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

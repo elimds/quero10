@@ -1,0 +1,50 @@
+<div class="row-fluid link-cadastro">
+    <%= link_to new_institute_path do %>
+        <i class="icon-plus"></i> Adicionar Instituição
+    <% end %>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-th-list"></i> Lista de Institutes</h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                                                    <th>Nome</th>
+                                                    <th>Endereço</th>
+                                                    <th>Número</th>
+                                                    <th>Bairro</th>
+                                                    <th>Cidade</th>
+                                                    <th>Estado</th>
+                                                    <th>CEP</th>
+                                                    <th>Telefone</th>
+                                                    <th>Responsável</th>
+                                                <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @institutes.each do |institute| %>
+                        <tr>
+                                                            <td><%= institute.name %></td>
+                                                            <td><%= institute.address %></td>
+                                                            <td><%= institute.number %></td>
+                                                            <td><%= institute.district %></td>
+                                                            <td><%= institute.city %></td>
+                                                            <td><%= institute.state %></td>
+                                                            <td><%= institute.zip_code %></td>
+                                                            <td><%= institute.phone %></td>
+                                                            <td><%= institute.person %></td>
+                                                        <td><%= link_to 'Visualizar', institute %></td>
+                            <td><%= link_to 'Editar', edit_institute_path(institute) %></td>
+                            <td><%= link_to 'Deletar', institute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

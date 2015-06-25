@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: quero10 #<%= ENV['USERNAME'] %>
+  password: quero10 #<%= ENV['PASSWORD'] %>
+  host: localhost #     <%= ENV['IP'] %>
+  
+development:
+  <<: *default
+  database: quero10_development
+
+test:
+  <<: *default
+  database: quero10_test
+
+production:
+  <<: *default
+  database: quero_production
+  

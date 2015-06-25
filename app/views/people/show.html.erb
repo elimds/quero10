@@ -1,0 +1,42 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-list-alt"></i> Visualizar Person</h3>
+        </div>
+        <div class="well no-padding">
+            <% unless notice.nil? %>
+                <div class="alert"><%= notice %></div>
+            <% end %>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Name:</label>
+                    <div class="controls">
+                        <%= @person.name %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Email:</label>
+                    <div class="controls">
+                        <%= @person.email %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Lattes:</label>
+                    <div class="controls">
+                        <%= @person.lattes %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Phone:</label>
+                    <div class="controls">
+                        <%= @person.phone %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Mobile phone:</label>
+                    <div class="controls">
+                        <%= @person.mobile_phone %>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
