@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sub_areas
   resources :areas
   resources :categories
   resources :great_areas
