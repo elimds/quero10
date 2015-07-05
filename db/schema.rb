@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702032850) do
+ActiveRecord::Schema.define(version: 20150705144423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(version: 20150702032850) do
   add_index "institutes", ["person_id"], name: "index_institutes_on_person_id", using: :btree
   add_index "institutes", ["state_id"], name: "index_institutes_on_state_id", using: :btree
 
+  create_table "naturefinancings", force: :cascade do |t|
+    t.integer  "codigo"
+    t.string   "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -65,6 +72,17 @@ ActiveRecord::Schema.define(version: 20150702032850) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "specialities", force: :cascade do |t|
+    t.integer  "codigo"
+    t.string   "titulo"
+    t.string   "descricao"
+    t.integer  "sub_area_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "specialities", ["sub_area_id"], name: "index_specialities_on_sub_area_id", using: :btree
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
@@ -85,5 +103,6 @@ ActiveRecord::Schema.define(version: 20150702032850) do
 
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
+  add_foreign_key "specialities", "sub_areas"
   add_foreign_key "sub_areas", "areas"
 end

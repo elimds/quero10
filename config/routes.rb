@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :specialities
+  resources :naturefinancings
+  resources :specialties
   resources :sub_areas
   resources :areas
   resources :categories

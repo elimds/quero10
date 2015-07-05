@@ -1,0 +1,45 @@
+<div class="well no-padding">
+    <%= form_for(@speciality, :html => { class: 'form-horizontal' }) do |f| %>
+        
+        <% if @speciality.errors.any? %>
+            <div class="alert alert-error">
+                <h4><%= pluralize(@speciality.errors.count, "error") %> prohibited this pessoa from being saved:</h4>
+                <ul>
+                    <% @speciality.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :codigo, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.number_field :codigo, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :titulo, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :titulo, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :descricao, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :descricao, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :sub_area, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :sub_area, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+            
+        <div class="clearfix"></div>
+        <div class="form-actions">
+            <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+</div>

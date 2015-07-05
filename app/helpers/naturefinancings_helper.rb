@@ -1,0 +1,2 @@
+module NaturefinancingsHelper
+end
