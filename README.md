@@ -1,22 +1,6 @@
-<<<<<<< HEAD
+<p align="center"><img src="https://github.com/elimds/quero10/blob/master/docs/logo_quero10.png?raw=true" width="20%"/></p>
+<p align="justify"> "Quero 10", é uma ferramenta para auxílio na gestão de projetos de pesquisas, possibilitando aos pesquisadores a autogestão dos seus projetos. Este sistema trata dos assuntos relacionados ao escritório de projeto, o sistema controla os participantes dos projetos, gerência os gastos/investimentos do projeto e com isso facilita as prestações de contas aos órgãos financiadores além de auxiliar na publicidade/transparência destes projetos.</p>
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
-
-Happy coding!
-The Cloud9 IDE team
 =======
 ***
 **quero10**
