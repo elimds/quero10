@@ -12,14 +12,15 @@
             </div>
         <% end %>
 
-                    <div class="control-group span6 no-margin-left">
-                <%= f.label :title, class: 'control-label' %>
+                    <div class="control-group span12 no-margin-left">
+                <%= f.label :title, 'Título:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :title, required: true, class: 'input-block-level' %>
                 </div>
             </div>
-                    <div class="control-group span6 no-margin-left">
-                <%= f.label :description, class: 'control-label' %>
+            <div class="clearfix"></div>
+                    <div class="control-group span12 no-margin-left">
+                <%= f.label :description, 'Descrição:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_area :description, required: true, class: 'input-block-level' %>
                 </div>
@@ -27,7 +28,7 @@
             
         <div class="clearfix"></div>
         <div class="form-actions">
-            <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+            <%= f.submit ( f.object.new_record? ? "Cadastrar" : "Atualizar"), class: "btn btn-primary" %>
         </div>
     <% end %>
 </div>
