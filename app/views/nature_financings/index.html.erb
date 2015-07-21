@@ -1,20 +1,20 @@
 <div class="row-fluid link-cadastro">
     <%= link_to new_nature_financing_path do %>
-        <i class="icon-plus"></i> Adicionar nature_financing
+        <i class="icon-plus"></i> Adicionar Natureza de Financiamento
     <% end %>
 </div>
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-th-list"></i> Lista de Nature_financings</h3>
+            <h3><i class="icon-th-list"></i> Lista de Naturezas de Financiamento</h3>
         </div>
         <div class="well no-padding">
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Title</th>
-                                                    <th>Description</th>
-                                                    <th>Institute</th>
+                                                    <th>Título</th>
+                                                    <th>Descrição</th>
+                                                    <th>Instituição</th>
                                                 <th></th>
                         <th></th>
                         <th></th>
@@ -25,7 +25,7 @@
                         <tr>
                                                             <td><%= nature_financing.title %></td>
                                                             <td><%= nature_financing.description %></td>
-                                                            <td><%= nature_financing.institute %></td>
+                                                            <td><%= nature_financing.institute.name %></td>
                                                         <td><%= link_to 'Visualizar', nature_financing %></td>
                             <td><%= link_to 'Editar', edit_nature_financing_path(nature_financing) %></td>
                             <td><%= link_to 'Deletar', nature_financing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
