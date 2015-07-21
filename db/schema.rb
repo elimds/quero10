@@ -11,25 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721032923) do
+ActiveRecord::Schema.define(version: 20150721042638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "areas", force: :cascade do |t|
-    t.integer  "codigo"
-    t.string   "descricao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.text     "description"
+    t.integer  "great_area_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
+  add_index "areas", ["great_area_id"], name: "index_areas_on_great_area_id", using: :btree
+
   create_table "categories", force: :cascade do |t|
-    t.integer  "codigo"
-    t.string   "titulo"
-    t.string   "descricao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.text     "description"
+    t.integer  "institute_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
+
+  add_index "categories", ["institute_id"], name: "index_categories_on_institute_id", using: :btree
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
@@ -43,11 +48,10 @@ ActiveRecord::Schema.define(version: 20150721032923) do
   add_index "departments", ["person_id"], name: "index_departments_on_person_id", using: :btree
 
   create_table "great_areas", force: :cascade do |t|
-    t.integer  "codigo"
-    t.string   "titulo"
-    t.string   "descricao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "institutes", force: :cascade do |t|
@@ -67,12 +71,15 @@ ActiveRecord::Schema.define(version: 20150721032923) do
   add_index "institutes", ["person_id"], name: "index_institutes_on_person_id", using: :btree
   add_index "institutes", ["state_id"], name: "index_institutes_on_state_id", using: :btree
 
-  create_table "naturefinancings", force: :cascade do |t|
-    t.integer  "codigo"
-    t.string   "descricao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "nature_financings", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "institute_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
+
+  add_index "nature_financings", ["institute_id"], name: "index_nature_financings_on_institute_id", using: :btree
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
@@ -85,26 +92,14 @@ ActiveRecord::Schema.define(version: 20150721032923) do
   end
 
   create_table "specialities", force: :cascade do |t|
-    t.integer  "codigo"
-    t.string   "titulo"
-    t.string   "descricao"
+    t.string   "title"
+    t.text     "description"
     t.integer  "sub_area_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   add_index "specialities", ["sub_area_id"], name: "index_specialities_on_sub_area_id", using: :btree
-
-  create_table "specialties", force: :cascade do |t|
-    t.integer  "codigo"
-    t.string   "titulo"
-    t.string   "descricao"
-    t.integer  "sub_area_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "specialties", ["sub_area_id"], name: "index_specialties_on_sub_area_id", using: :btree
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
@@ -114,20 +109,22 @@ ActiveRecord::Schema.define(version: 20150721032923) do
   end
 
   create_table "sub_areas", force: :cascade do |t|
-    t.integer  "codigo"
-    t.string   "descricao"
+    t.string   "title"
+    t.text     "description"
     t.integer  "area_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "sub_areas", ["area_id"], name: "index_sub_areas_on_area_id", using: :btree
 
+  add_foreign_key "areas", "great_areas"
+  add_foreign_key "categories", "institutes"
   add_foreign_key "departments", "institutes"
   add_foreign_key "departments", "people"
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
+  add_foreign_key "nature_financings", "institutes"
   add_foreign_key "specialities", "sub_areas"
-  add_foreign_key "specialties", "sub_areas"
   add_foreign_key "sub_areas", "areas"
 end

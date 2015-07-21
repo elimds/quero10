@@ -13,15 +13,21 @@
         <% end %>
 
                     <div class="control-group span6 no-margin-left">
-                <%= f.label :codigo, class: 'control-label' %>
+                <%= f.label :title, class: 'control-label' %>
                 <div class="controls">
-                    <%= f.number_field :codigo, required: true, class: 'input-block-level' %>
+                    <%= f.text_field :title, required: true, class: 'input-block-level' %>
                 </div>
             </div>
                     <div class="control-group span6 no-margin-left">
-                <%= f.label :descricao, class: 'control-label' %>
+                <%= f.label :description, class: 'control-label' %>
                 <div class="controls">
-                    <%= f.text_field :descricao, required: true, class: 'input-block-level' %>
+                    <%= f.text_area :description, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :great_area, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :great_area, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             

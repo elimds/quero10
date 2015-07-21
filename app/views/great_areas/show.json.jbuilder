@@ -1,1 +1,1 @@
-json.extract! @great_area, :id, :codigo, :titulo, :descricao, :created_at, :updated_at
+json.extract! @great_area, :id, :title, :description, :created_at, :updated_at

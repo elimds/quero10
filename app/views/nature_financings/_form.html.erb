@@ -1,11 +1,11 @@
 <div class="well no-padding">
-    <%= form_for(@speciality, :html => { class: 'form-horizontal' }) do |f| %>
+    <%= form_for(@nature_financing, :html => { class: 'form-horizontal' }) do |f| %>
         
-        <% if @speciality.errors.any? %>
+        <% if @nature_financing.errors.any? %>
             <div class="alert alert-error">
-                <h4><%= pluralize(@speciality.errors.count, "error") %> prohibited this pessoa from being saved:</h4>
+                <h4><%= pluralize(@nature_financing.errors.count, "error") %> prohibited this pessoa from being saved:</h4>
                 <ul>
-                    <% @speciality.errors.full_messages.each do |message| %>
+                    <% @nature_financing.errors.full_messages.each do |message| %>
                         <li><%= message %></li>
                     <% end %>
                 </ul>
@@ -25,9 +25,9 @@
                 </div>
             </div>
                     <div class="control-group span6 no-margin-left">
-                <%= f.label :sub_area, class: 'control-label' %>
+                <%= f.label :institute, class: 'control-label' %>
                 <div class="controls">
-                    <%= f.text_field :sub_area, required: true, class: 'input-block-level' %>
+                    <%= f.text_field :institute, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             

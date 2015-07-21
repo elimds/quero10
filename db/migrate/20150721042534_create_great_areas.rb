@@ -1,9 +1,8 @@
 class CreateGreatAreas < ActiveRecord::Migration
   def change
     create_table :great_areas do |t|
-      t.integer :codigo
-      t.string :titulo
-      t.string :descricao
+      t.string :title
+      t.text :description
 
       t.timestamps null: false
     end

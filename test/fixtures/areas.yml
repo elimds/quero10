@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  codigo: 1
-  descricao: MyString
+  title: MyString
+  description: MyText
+  great_area_id: 
 
 two:
-  codigo: 1
-  descricao: MyString
+  title: MyString
+  description: MyText
+  great_area_id: 

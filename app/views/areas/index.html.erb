@@ -12,8 +12,9 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Codigo</th>
-                                                    <th>Descricao</th>
+                                                    <th>Title</th>
+                                                    <th>Description</th>
+                                                    <th>Great_area</th>
                                                 <th></th>
                         <th></th>
                         <th></th>
@@ -22,8 +23,9 @@
                 <tbody>
                     <% @areas.each do |area| %>
                         <tr>
-                                                            <td><%= area.codigo %></td>
-                                                            <td><%= area.descricao %></td>
+                                                            <td><%= area.title %></td>
+                                                            <td><%= area.description %></td>
+                                                            <td><%= area.great_area %></td>
                                                         <td><%= link_to 'Visualizar', area %></td>
                             <td><%= link_to 'Editar', edit_area_path(area) %></td>
                             <td><%= link_to 'Deletar', area, method: :delete, data: { confirm: 'Are you sure?' } %></td>

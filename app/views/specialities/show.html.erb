@@ -1,28 +1,22 @@
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-list-alt"></i> Visualizar Especialidade</h3>
+            <h3><i class="icon-list-alt"></i> Visualizar Speciality</h3>
         </div>
         <div class="well no-padding">
             <% unless notice.nil? %>
                 <div class="alert"><%= notice %></div>
             <% end %>
                             <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Codigo:</label>
+                    <label class="control-label">Title:</label>
                     <div class="controls">
-                        <%= @speciality.codigo %>
+                        <%= @speciality.title %>
                     </div>
                 </div>
                             <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Titulo:</label>
+                    <label class="control-label">Description:</label>
                     <div class="controls">
-                        <%= @speciality.titulo %>
-                    </div>
-                </div>
-                            <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Descricao:</label>
-                    <div class="controls">
-                        <%= @speciality.descricao %>
+                        <%= @speciality.description %>
                     </div>
                 </div>
                             <div class="control-group span12 no-margin-left">

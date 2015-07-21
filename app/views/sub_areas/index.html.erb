@@ -1,19 +1,19 @@
 <div class="row-fluid link-cadastro">
     <%= link_to new_sub_area_path do %>
-        <i class="icon-plus"></i> Adicionar Sub-Área
+        <i class="icon-plus"></i> Adicionar sub_area
     <% end %>
 </div>
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-th-list"></i> Lista de Sub -áreas</h3>
+            <h3><i class="icon-th-list"></i> Lista de Sub_areas</h3>
         </div>
         <div class="well no-padding">
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Codigo</th>
-                                                    <th>Descricao</th>
+                                                    <th>Title</th>
+                                                    <th>Description</th>
                                                     <th>Area</th>
                                                 <th></th>
                         <th></th>
@@ -23,8 +23,8 @@
                 <tbody>
                     <% @sub_areas.each do |sub_area| %>
                         <tr>
-                                                            <td><%= sub_area.codigo %></td>
-                                                            <td><%= sub_area.descricao %></td>
+                                                            <td><%= sub_area.title %></td>
+                                                            <td><%= sub_area.description %></td>
                                                             <td><%= sub_area.area %></td>
                                                         <td><%= link_to 'Visualizar', sub_area %></td>
                             <td><%= link_to 'Editar', edit_sub_area_path(sub_area) %></td>

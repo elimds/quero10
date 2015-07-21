@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
+  resources :nature_financings
+  resources :categories
+  resources :specialities
+  resources :sub_areas
+  resources :areas
+  resources :great_areas
   resources :departments
   get 'welcome/index'
   root 'welcome#index'
   
-  resources :specialities
-  resources :naturefinancings
-  resources :specialties
-  resources :sub_areas
-  resources :areas
-  resources :categories
-  resources :great_areas
   resources :institutes
   resources :people
   # The priority is based upon order of creation: first created -> highest priority.

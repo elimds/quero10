@@ -18,7 +18,7 @@ class SpecialitiesControllerTest < ActionController::TestCase
 
   test "should create speciality" do
     assert_difference('Speciality.count') do
-      post :create, speciality: { codigo: @speciality.codigo, descricao: @speciality.descricao, sub_area_id: @speciality.sub_area_id, titulo: @speciality.titulo }
+      post :create, speciality: { description: @speciality.description, sub_area_id: @speciality.sub_area_id, title: @speciality.title }
     end
 
     assert_redirected_to speciality_path(assigns(:speciality))
@@ -35,7 +35,7 @@ class SpecialitiesControllerTest < ActionController::TestCase
   end
 
   test "should update speciality" do
-    patch :update, id: @speciality, speciality: { codigo: @speciality.codigo, descricao: @speciality.descricao, sub_area_id: @speciality.sub_area_id, titulo: @speciality.titulo }
+    patch :update, id: @speciality, speciality: { description: @speciality.description, sub_area_id: @speciality.sub_area_id, title: @speciality.title }
     assert_redirected_to speciality_path(assigns(:speciality))
   end
 

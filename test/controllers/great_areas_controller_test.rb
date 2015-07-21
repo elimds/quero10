@@ -18,7 +18,7 @@ class GreatAreasControllerTest < ActionController::TestCase
 
   test "should create great_area" do
     assert_difference('GreatArea.count') do
-      post :create, great_area: { codigo: @great_area.codigo, descricao: @great_area.descricao, titulo: @great_area.titulo }
+      post :create, great_area: { description: @great_area.description, title: @great_area.title }
     end
 
     assert_redirected_to great_area_path(assigns(:great_area))
@@ -35,7 +35,7 @@ class GreatAreasControllerTest < ActionController::TestCase
   end
 
   test "should update great_area" do
-    patch :update, id: @great_area, great_area: { codigo: @great_area.codigo, descricao: @great_area.descricao, titulo: @great_area.titulo }
+    patch :update, id: @great_area, great_area: { description: @great_area.description, title: @great_area.title }
     assert_redirected_to great_area_path(assigns(:great_area))
   end
 

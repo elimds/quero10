@@ -18,7 +18,7 @@ class SubAreasControllerTest < ActionController::TestCase
 
   test "should create sub_area" do
     assert_difference('SubArea.count') do
-      post :create, sub_area: { area_id: @sub_area.area_id, codigo: @sub_area.codigo, descricao: @sub_area.descricao }
+      post :create, sub_area: { area_id: @sub_area.area_id, description: @sub_area.description, title: @sub_area.title }
     end
 
     assert_redirected_to sub_area_path(assigns(:sub_area))
@@ -35,7 +35,7 @@ class SubAreasControllerTest < ActionController::TestCase
   end
 
   test "should update sub_area" do
-    patch :update, id: @sub_area, sub_area: { area_id: @sub_area.area_id, codigo: @sub_area.codigo, descricao: @sub_area.descricao }
+    patch :update, id: @sub_area, sub_area: { area_id: @sub_area.area_id, description: @sub_area.description, title: @sub_area.title }
     assert_redirected_to sub_area_path(assigns(:sub_area))
   end
 
