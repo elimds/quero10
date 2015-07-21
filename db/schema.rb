@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721042638) do
+ActiveRecord::Schema.define(version: 20150721120000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,22 @@ ActiveRecord::Schema.define(version: 20150721042638) do
 
   add_index "departments", ["institute_id"], name: "index_departments_on_institute_id", using: :btree
   add_index "departments", ["person_id"], name: "index_departments_on_person_id", using: :btree
+
+  create_table "financial_institutions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "number"
+    t.string   "district"
+    t.string   "city"
+    t.integer  "state_id"
+    t.string   "zip_code"
+    t.integer  "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "financial_institutions", ["person_id"], name: "index_financial_institutions_on_person_id", using: :btree
+  add_index "financial_institutions", ["state_id"], name: "index_financial_institutions_on_state_id", using: :btree
 
   create_table "great_areas", force: :cascade do |t|
     t.string   "title"
@@ -122,6 +138,8 @@ ActiveRecord::Schema.define(version: 20150721042638) do
   add_foreign_key "categories", "institutes"
   add_foreign_key "departments", "institutes"
   add_foreign_key "departments", "people"
+  add_foreign_key "financial_institutions", "people"
+  add_foreign_key "financial_institutions", "states"
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
   add_foreign_key "nature_financings", "institutes"

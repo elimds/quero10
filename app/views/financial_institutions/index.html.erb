@@ -1,0 +1,46 @@
+<div class="row-fluid link-cadastro">
+    <%= link_to new_financial_institution_path do %>
+        <i class="icon-plus"></i> Adicionar Instituições de Fomento
+    <% end %>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-th-list"></i> Lista de Instituições de Fomento</h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                                                    <th>Nome</th>
+                                                    <th>Endereço</th>
+                                                    <th>Bairro</th>
+                                                    <th>Cidade</th>
+                                                    <th>Estado</th>
+                                                    <th>Cidade</th>
+                                                    <th>Responsável</th>
+                                                <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @financial_institutions.each do |financial_institution| %>
+                        <tr>
+                            <td><%= financial_institution.name %></td>
+                            <td><%= financial_institution.address %>, <%= financial_institution.number %></td>
+                            <td><%= financial_institution.district %></td>
+                            <td><%= financial_institution.city %></td>
+                            <td><%= financial_institution.state.name %></td>
+                            <td><%= financial_institution.zip_code %></td>
+                            <td><%= financial_institution.person.name %></td>
+                            <td><%= link_to 'Visualizar', financial_institution %></td>
+                            <td><%= link_to 'Editar', edit_financial_institution_path(financial_institution) %></td>
+                            <td><%= link_to 'Deletar', financial_institution, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
