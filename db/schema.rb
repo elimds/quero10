@@ -84,6 +84,17 @@ ActiveRecord::Schema.define(version: 20150705144423) do
 
   add_index "specialities", ["sub_area_id"], name: "index_specialities_on_sub_area_id", using: :btree
 
+  create_table "specialties", force: :cascade do |t|
+    t.integer  "codigo"
+    t.string   "titulo"
+    t.string   "descricao"
+    t.integer  "sub_area_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "specialties", ["sub_area_id"], name: "index_specialties_on_sub_area_id", using: :btree
+
   create_table "states", force: :cascade do |t|
     t.string   "name"
     t.string   "acronym"
@@ -104,5 +115,6 @@ ActiveRecord::Schema.define(version: 20150705144423) do
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
   add_foreign_key "specialities", "sub_areas"
+  add_foreign_key "specialties", "sub_areas"
   add_foreign_key "sub_areas", "areas"
 end
