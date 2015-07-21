@@ -6,7 +6,7 @@
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-th-list"></i> Lista de Institutes</h3>
+            <h3><i class="icon-th-list"></i> Lista de Instituições</h3>
         </div>
         <div class="well no-padding">
             <table class="data-table">
@@ -34,10 +34,10 @@
                                                             <td><%= institute.number %></td>
                                                             <td><%= institute.district %></td>
                                                             <td><%= institute.city %></td>
-                                                            <td><%= institute.state %></td>
+                                                            <td><%= institute.state.name %></td>
                                                             <td><%= institute.zip_code %></td>
                                                             <td><%= institute.phone %></td>
-                                                            <td><%= institute.person %></td>
+                                                            <td><%= institute.person.name %></td>
                                                         <td><%= link_to 'Visualizar', institute %></td>
                             <td><%= link_to 'Editar', edit_institute_path(institute) %></td>
                             <td><%= link_to 'Deletar', institute, method: :delete, data: { confirm: 'Are you sure?' } %></td>

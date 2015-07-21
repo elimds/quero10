@@ -1,20 +1,20 @@
 <div class="row-fluid link-cadastro">
     <%= link_to new_sub_area_path do %>
-        <i class="icon-plus"></i> Adicionar sub_area
+        <i class="icon-plus"></i> Adicionar Sub Área
     <% end %>
 </div>
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-th-list"></i> Lista de Sub_areas</h3>
+            <h3><i class="icon-th-list"></i> Lista de Sub Áreas</h3>
         </div>
         <div class="well no-padding">
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Title</th>
-                                                    <th>Description</th>
-                                                    <th>Area</th>
+                                                    <th>Título</th>
+                                                    <th>Descrição</th>
+                                                    <th>Área</th>
                                                 <th></th>
                         <th></th>
                         <th></th>
@@ -25,7 +25,7 @@
                         <tr>
                                                             <td><%= sub_area.title %></td>
                                                             <td><%= sub_area.description %></td>
-                                                            <td><%= sub_area.area %></td>
+                                                            <td><%= sub_area.area.title %></td>
                                                         <td><%= link_to 'Visualizar', sub_area %></td>
                             <td><%= link_to 'Editar', edit_sub_area_path(sub_area) %></td>
                             <td><%= link_to 'Deletar', sub_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>

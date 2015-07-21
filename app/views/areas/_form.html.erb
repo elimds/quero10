@@ -21,7 +21,7 @@
             <div class="control-group span6">
                 <%= f.label :great_area, 'Grande Área:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :great_area_id, options_for_select(GreatArea.all.map{|s|[s.title, s.id]}), {:prompt => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :great_area_id, options_for_select(GreatArea.all.map{|s|[s.title, s.id]}, :selected => @area.great_area_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span12 no-margin-left">

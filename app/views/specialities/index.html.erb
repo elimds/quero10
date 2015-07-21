@@ -1,20 +1,20 @@
 <div class="row-fluid link-cadastro">
     <%= link_to new_speciality_path do %>
-        <i class="icon-plus"></i> Adicionar speciality
+        <i class="icon-plus"></i> Adicionar Especialidade
     <% end %>
 </div>
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-th-list"></i> Lista de Specialities</h3>
+            <h3><i class="icon-th-list"></i> Lista de Especialidades</h3>
         </div>
         <div class="well no-padding">
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Title</th>
-                                                    <th>Description</th>
-                                                    <th>Sub_area</th>
+                                                    <th>Título</th>
+                                                    <th>Descrição</th>
+                                                    <th>Sub Área</th>
                                                 <th></th>
                         <th></th>
                         <th></th>
@@ -25,7 +25,7 @@
                         <tr>
                                                             <td><%= speciality.title %></td>
                                                             <td><%= speciality.description %></td>
-                                                            <td><%= speciality.sub_area %></td>
+                                                            <td><%= speciality.sub_area.title %></td>
                                                         <td><%= link_to 'Visualizar', speciality %></td>
                             <td><%= link_to 'Editar', edit_speciality_path(speciality) %></td>
                             <td><%= link_to 'Deletar', speciality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
