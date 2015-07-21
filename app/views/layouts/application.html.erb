@@ -37,12 +37,17 @@
 
 					<!-- User Navigation: User -->
 					<li class="dropdown">
-
+						
 						<!-- User Navigation: User Link -->
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="icon-user icon-white"></i> 
-							<span class="hidden-phone">Anderson Maia</span>
-						</a>
+							<% if current_user %>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-user icon-white"></i> 
+								<span class="hidden-phone">
+								  <%= current_user.email %>
+							  </span>
+							  </a>
+							<% end %>  
+							  
 						<!-- / User Navigation: User Link -->
 
 						<!-- User Navigation: User Dropdown -->
@@ -50,17 +55,23 @@
 							<li><a href="#"><i class="icon-user"></i> Alterar Perfil</a></li>
 						</ul>
 						<!-- / User Navigation: User Dropdown -->
-
 					</li>
 					<!-- / User Navigation: User -->
 					
 					<!-- User Navigation: Logout -->
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle">
-							<i class="icon-off icon-white"></i> 
-							<span class="hidden-phone">Logout</span>
-						</a>
-					</li>
+						  <% if current_user %>
+								<li class="dropdown">	
+									<div align="right">
+									<a class="dropdown-toggle">
+										<i class="icon-off icon-white"></i>
+									</a>
+									</div>
+								</li>
+								<li><%= link_to "Logout", logout_path, method: "delete" %></a></li>
+						  <% else %>
+						    <li><%= link_to "Login", 'login' %></a></li> 
+						    <li><%= link_to "Não sou cadastrado", 'signup' %></a></li> 
+						  <% end %>
 					<!-- / User Navigation: Logout -->
 
 				</ul>
@@ -120,7 +131,7 @@
 					
 					<!-- Main Navigation: Natureza de financiamento -->
           <li class="active">
-            <%= link_to naturefinancings_path do %>
+            <%= link_to nature_financings_path do %>
               <i class="icon-money"></i> Natureza de financiamento
             <% end %>
           </li>
@@ -134,7 +145,7 @@
 
 		</div>
 		<!-- / Main Navigation: Box -->
-	  
+		
     <%= yield %>
     
   </div>

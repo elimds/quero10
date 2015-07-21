@@ -1,4 +1,5 @@
 class AreasController < ApplicationController
+  before_action :require_user, only: [:index, :show]
   before_action :set_area, only: [:show, :edit, :update, :destroy]
 
   # GET /areas

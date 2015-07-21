@@ -1,0 +1,9 @@
+    <h1>Faça seu cadastro</h1>
+
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :first_name, :placeholder => "Nome" %><br>
+      <%= f.text_field :last_name, :placeholder => "Sobrenome" %><br>
+      <%= f.email_field :email, :placeholder => "Email" %><br>
+      <%= f.password_field :password, :placeholder => "senha" %><br>
+      <%= f.submit "Cadastrar", class: "btn-submit" %>
+    <% end %>
