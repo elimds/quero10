@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705144423) do
+ActiveRecord::Schema.define(version: 20150721032923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20150705144423) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "departments", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "institute_id"
+    t.integer  "person_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "departments", ["institute_id"], name: "index_departments_on_institute_id", using: :btree
+  add_index "departments", ["person_id"], name: "index_departments_on_person_id", using: :btree
 
   create_table "great_areas", force: :cascade do |t|
     t.integer  "codigo"
@@ -112,6 +123,8 @@ ActiveRecord::Schema.define(version: 20150705144423) do
 
   add_index "sub_areas", ["area_id"], name: "index_sub_areas_on_area_id", using: :btree
 
+  add_foreign_key "departments", "institutes"
+  add_foreign_key "departments", "people"
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
   add_foreign_key "specialities", "sub_areas"

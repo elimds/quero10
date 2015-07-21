@@ -1,0 +1,38 @@
+<div class="row-fluid link-cadastro">
+    <%= link_to new_department_path do %>
+        <i class="icon-plus"></i> Adicionar departamento
+    <% end %>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-th-list"></i> Lista de Departamentos</h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Organização</th>
+                        <th>Responsável</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @departments.each do |department| %>
+                        <tr>
+                            <td><%= department.name %></td>
+                            <td><%= department.institute.name %></td>
+                            <td><%= department.person.name %></td>
+                            <td><%= link_to 'Visualizar', department %></td>
+                            <td><%= link_to 'Editar', edit_department_path(department) %></td>
+                            <td><%= link_to 'Deletar', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
