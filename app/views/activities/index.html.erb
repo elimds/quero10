@@ -1,0 +1,46 @@
+<div class="row-fluid link-cadastro">
+    <%= link_to new_activity_path do %>
+        <i class="icon-plus"></i> Adicionar activity
+    <% end %>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-th-list"></i> Lista de Activities</h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                                                    <th>Description</th>
+                                                    <th>Responsible_id</th>
+                                                    <th>Date_start</th>
+                                                    <th>Date_end</th>
+                                                    <th>Situation</th>
+                                                    <th>Percent_run</th>
+                                                    <th>Project</th>
+                                                <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @activities.each do |activity| %>
+                        <tr>
+                                                            <td><%= activity.description %></td>
+                                                            <td><%= activity.responsible_id %></td>
+                                                            <td><%= activity.date_start %></td>
+                                                            <td><%= activity.date_end %></td>
+                                                            <td><%= activity.situation %></td>
+                                                            <td><%= activity.percent_run %></td>
+                                                            <td><%= activity.project %></td>
+                                                        <td><%= link_to 'Visualizar', activity %></td>
+                            <td><%= link_to 'Editar', edit_activity_path(activity) %></td>
+                            <td><%= link_to 'Deletar', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-list-alt"></i> Visualizar Research_group</h3>
+        </div>
+        <div class="well no-padding">
+            <% unless notice.nil? %>
+                <div class="alert"><%= notice %></div>
+            <% end %>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Title:</label>
+                    <div class="controls">
+                        <%= @research_group.title %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Leader:</label>
+                    <div class="controls">
+                        <%= @research_group.leader_id %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Vice leader:</label>
+                    <div class="controls">
+                        <%= @research_group.vice_leader_id %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Area:</label>
+                    <div class="controls">
+                        <%= @research_group.area %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Sub area:</label>
+                    <div class="controls">
+                        <%= @research_group.sub_area %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Date update:</label>
+                    <div class="controls">
+                        <%= @research_group.date_update %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Description:</label>
+                    <div class="controls">
+                        <%= @research_group.description %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Justification:</label>
+                    <div class="controls">
+                        <%= @research_group.justification %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Institutions:</label>
+                    <div class="controls">
+                        <%= @research_group.institutions %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Infraestructure:</label>
+                    <div class="controls">
+                        <%= @research_group.infraestructure %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Laboratories:</label>
+                    <div class="controls">
+                        <%= @research_group.laboratories %>
+                    </div>
+                </div>
+                            <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Status:</label>
+                    <div class="controls">
+                        <%= @research_group.status %>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>

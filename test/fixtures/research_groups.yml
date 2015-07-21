@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  leader_id: 
+  vice_leader_id: 
+  area: 
+  sub_area: 
+  date_update: 
+  description: 
+  justification: 
+  institutions: 
+  infraestructure: 
+  laboratories: 
+  status: 
+
+two:
+  title: 
+  leader_id: 
+  vice_leader_id: 
+  area: 
+  sub_area: 
+  date_update: 
+  description: 
+  justification: 
+  institutions: 
+  infraestructure: 
+  laboratories: 
+  status: 
