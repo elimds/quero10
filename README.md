@@ -1,5 +1,5 @@
 <p align="center"><img src="https://github.com/elimds/quero10/blob/master/docs/logo_quero10.png?raw=true" width="20%"/></p>
-<p> "Quero 10", é uma ferramenta para auxílio na gestão de projetos de pesquisas, possibilitando aos pesquisadores a autogestão dos seus projetos. Este sistema trata dos assuntos relacionados ao escritório de projeto, o sistema controla os participantes dos projetos, gerência os gastos/investimentos do projeto e com isso facilita as prestações de contas aos órgãos financiadores além de auxiliar na publicidade/transparência destes projetos.</p>
+<p align="justify"> "Quero 10", é uma ferramenta para auxílio na gestão de projetos de pesquisas, possibilitando aos pesquisadores a autogestão dos seus projetos. Este sistema trata dos assuntos relacionados ao escritório de projeto, o sistema controla os participantes dos projetos, gerência os gastos/investimentos do projeto e com isso facilita as prestações de contas aos órgãos financiadores além de auxiliar na publicidade/transparência destes projetos.</p>
 
 =======
 ***
