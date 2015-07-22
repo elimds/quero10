@@ -13,140 +13,140 @@
         <% end %>
 
             <div class="control-group span6 no-margin-left">
-                <%= f.label :title, 'Título', class: 'control-label' %>
+                <%= f.label :title, 'Título:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :title, required: true, class: 'input-block-level' %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :department, 'Departamento', class: 'control-label' %>
+            <div class="control-group span6">
+                <%= f.label :department, 'Departamento:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :department_id, Department.all.collect {|d| [d.name, d.id] } %>
+                    <%= f.select :department_id, options_for_select(Department.all.map{|s|[s.name, s.id]}, :selected => @project.department_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :date_start, 'Data Inicio', class: 'control-label' %>
+            <div class="control-group span3 no-margin-left">
+                <%= f.label :date_start, 'Data Início:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.date_field :date_start, required: true, min: Date.today, class: 'input-block-level' %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :date_end, 'Data Término', class: 'control-label' %>
+            <div class="control-group span3">
+                <%= f.label :date_end, 'Data Término:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.date_field :date_end, required: true, min: Date.today, class: 'input-block-level' %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :keywords, 'Palavras-Chave', class: 'control-label' %>
+            <div class="control-group span6">
+                <%= f.label :keywords, 'Palavras-Chave:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :keywords, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
-                <%= f.label :email, 'E-mail', class: 'control-label' %>
+                <%= f.label :email, 'E-mail:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :email, required: true, class: 'input-block-level' %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :category, 'Categoria', class: 'control-label' %>
+            <div class="control-group span6">
+                <%= f.label :category, 'Categoria:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :category_id, Category.all.collect {|c| [c.title, c.id] } %>
+                    <%= f.select :category_id, options_for_select(Category.all.map{|s|[s.title, s.id]}, :selected => @project.category_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
-                <%= f.label :great_area, 'Grande Area', class: 'control-label' %>
+                <%= f.label :great_area, 'Grande Área:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :great_area_id, GreatArea.all.collect {|ga| [ga.title, ga.id] } %>
+                    <%= f.select :great_area_id, options_for_select(GreatArea.all.map{|s|[s.title, s.id]}, :selected => @project.great_area_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                </div>
+            </div>
+            <div class="control-group span6">
+                <%= f.label :area, 'Área:', class: 'control-label' %>
+                <div class="controls">
+                    <%= f.select :area_id, options_for_select(Area.all.map{|s|[s.title, s.id]}, :selected => @project.area_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
-                <%= f.label :area, 'Área', class: 'control-label' %>
+                <%= f.label :sub_area, 'Sub Área:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :area_id, Area.all.collect {|a| [a.title, a.id] }, required:true %>
+                    <%= f.select :sub_area_id, options_for_select(SubArea.all.map{|s|[s.title, s.id]}, :selected => @project.sub_area_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :sub_area, 'Sub-area', class: 'control-label' %>
+            <div class="control-group span6">
+                <%= f.label :speciality, 'Especialidade:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :sub_area_id, SubArea.all.collect {|sa| [sa.title, sa.id] }, required:true %>
-                </div>
-            </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :speciality, 'Especialidade', class: 'control-label' %>
-                <div class="controls">
-                    <%= f.select :speciality_id, Speciality.all.collect {|s| [s.title, s.id] }, required:true %>
+                    <%= f.select :speciality_id, options_for_select(Speciality.all.map{|s|[s.title, s.id]}, :selected => @project.speciality_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :short_description, 'Descrição Resumida', class: 'control-label' %>
+            <div class="control-group span12 no-margin-left">
+                <%= f.label :short_description, 'Descrição:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_area :short_description, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :introduction, 'Introdução/Justificativa', class: 'control-label' %>
+            <div class="control-group span12 no-margin-left">
+                <%= f.label :introduction, 'Justificativa:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_area :introduction, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :gols, 'Objetivos', class: 'control-label' %>
+            <div class="control-group span12 no-margin-left">
+                <%= f.label :gols, 'Objetivos:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_area :gols, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :methodology, 'Metodologia (Materiais e Métodos)', class: 'control-label' %>
+            <div class="control-group span12 no-margin-left">
+                <%= f.label :methodology, 'Metodologia:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_area :methodology, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :references, 'Referências', class: 'control-label' %>
+            <div class="control-group span12 no-margin-left">
+                <%= f.label :references, 'Referências:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_area :references, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :description_estimate, 'Descrição do Orçamento', class: 'control-label' %>
+            <div class="control-group span12 no-margin-left">
+                <%= f.label :description_estimate, 'Desc. do Orçamento:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_area :description_estimate, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :value_estimate, 'Valor Total do Orçamento', class: 'control-label' %>
+            <div class="control-group span4 no-margin-left">
+                <%= f.label :value_estimate, 'Valor do Orçamento:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :value_estimate, required: true, class: 'input-block-level' %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :financial_institution, 'Entidade Financiadora', class: 'control-label' %>
+            <div class="control-group span4">
+                <%= f.label :financial_institution, 'Financiadora:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :financial_institution_id, FinancialInstitution.all.collect {|fi| [fi.name, fi.id] } %>
+                    <%= f.select :financial_institution_id, options_for_select(FinancialInstitution.all.map{|s|[s.name, s.id]}, :selected => @project.financial_institution_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :nature_financing, 'Natureza do Financiamento', class: 'control-label' %>
+            <div class="control-group span4">
+                <%= f.label :nature_financing, 'Natureza do Financ.:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :nature_financing_id, NatureFinancing.all.collect {|nf| [nf.title, nf.id] } %>
+                    <%= f.select :nature_financing_id, options_for_select(NatureFinancing.all.map{|s|[s.title, s.id]}, :selected => @project.nature_financing_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :date_start_financing, 'Data Início (fomento)', class: 'control-label' %>
+            <div class="control-group span4 no-margin-left">
+                <%= f.label :date_start_financing, 'Data Início(fomento):', class: 'control-label' %>
                 <div class="controls">
                     <%= f.date_field :date_start_financing, required: true, min: Date.today, class: 'input-block-level' %>
                 </div>
             </div>
-                    <div class="control-group span6 no-margin-left">
-                <%= f.label :date_end_financing, 'Data Término (fomento)', class: 'control-label' %>
+                    <div class="control-group span4">
+                <%= f.label :date_end_financing, 'Data Térm(fomento):', class: 'control-label' %>
                 <div class="controls">
                     <%= f.date_field :date_end_financing, required: true, min: Date.today, class: 'input-block-level' %>
                 </div>

@@ -20,6 +20,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/1/edit
   def edit
+    @situations = Activity.situations
   end
 
   # POST /activities
