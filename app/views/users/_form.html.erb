@@ -3,7 +3,7 @@
         
         <% if @user.errors.any? %>
             <div class="alert alert-error">
-                <h4><%= pluralize(@user.errors.count, "error") %> prohibited this pessoa from being saved:</h4>
+                <h4><%= pluralize(@user.errors.count, "erro") %> durante o cadastro:</h4>
                 <ul>
                     <%= @user.errors.full_messages.each do |message| %>
                         <li><%= message %></li>
