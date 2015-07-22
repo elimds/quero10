@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     def new
         @user = User.new
         @person = Person.new
+        render layout: 'user'
     end
     
     def create 
