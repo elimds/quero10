@@ -57,3 +57,25 @@
             <div class="clearfix"></div>
         </div>
 </div>
+
+<script>
+    $(function() {
+        $("a.top-bar-minimize").off("click").each(function() {
+            $(this).attr("href", $(this).parents().parents().prop("id"));
+        }).click(function() {
+            var divId = $(this).attr("href");
+            
+            if ( $("#" + divId).hasClass("top-bar-closed") ) {
+                $("#" + divId).removeClass("top-bar-closed");
+                $("#" + divId).next(".well").slideDown({duration: 1000, easing: 'easeOutBack'});
+            }
+            else {
+                $("#" + divId).next(".well").slideUp('medium', function() {
+                    $("#" + divId).addClass("top-bar-closed"); 
+                });
+            }
+            
+            return false;
+        });
+    });
+</script>
