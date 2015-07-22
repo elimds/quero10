@@ -1,12 +1,12 @@
 <div class="row-fluid link-cadastro">
     <%= link_to new_project_path do %>
-        <i class="icon-plus"></i> Adicionar project
+        <i class="icon-plus"></i> Adicionar Projeto
     <% end %>
 </div>
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-th-list"></i> Lista de Projects</h3>
+            <h3><i class="icon-th-list"></i> Lista de Projetos</h3>
         </div>
         <div class="well no-padding">
             <table class="data-table">
@@ -19,7 +19,7 @@
                         <th>Categoria</th>
                         <th>Grande Área</th>
                         <th>Área</th>
-                        <th>Sub-area</th>
+                        <th>Sub Área</th>
                         <th>Valor Estimado</th>
                         <th></th>
                         <th></th>
@@ -30,17 +30,17 @@
                     <% @projects.each do |project| %>
                         <tr>
                             <td><%= project.title %></td>
-                            <td><%= project.department %></td>
-                            <td><%= project.date_start %></td>
-                            <td><%= project.date_end %></td>
-                            <td><%= project.category %></td>
-                            <td><%= project.great_area %></td>
-                            <td><%= project.area %></td>
-                            <td><%= project.sub_area %></td>
-                            <td><%= project.value_estimate %></td>
-                            <td><%= link_to 'Visualizar', project %></td>
-                            <td><%= link_to 'Editar', edit_project_path(project) %></td>
-                            <td><%= link_to 'Deletar', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            <td><%= project.department.name if project.department %> </td>
+                            <td><%= project.date_start.to_s(:custom) %> </td>
+                            <td><%= project.date_end.to_s(:custom) %> </td>
+                            <td><%= project.category.title if project.category %> </td>
+                            <td><%= project.great_area.title if project.great_area %> </td>
+                            <td><%= project.area.title if project.area %> </td>
+                            <td><%= project.sub_area.title if project.sub_area %> </td>
+                            <td><%= project.value_estimate %> </td>
+                            <td><%= link_to 'Visualizar', project %> </td>
+                            <td><%= link_to 'Editar', edit_project_path(project) %> </td>
+                            <td><%= link_to 'Deletar', project, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
                         </tr>
                     <% end %>
                 </tbody>

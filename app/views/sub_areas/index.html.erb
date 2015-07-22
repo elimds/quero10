@@ -12,10 +12,11 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Título</th>
-                                                    <th>Descrição</th>
-                                                    <th>Área</th>
-                                                <th></th>
+                        <th>Código Capes</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Área</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -23,10 +24,11 @@
                 <tbody>
                     <% @sub_areas.each do |sub_area| %>
                         <tr>
-                                                            <td><%= sub_area.title %></td>
-                                                            <td><%= sub_area.description %></td>
-                                                            <td><%= sub_area.area.title %></td>
-                                                        <td><%= link_to 'Visualizar', sub_area %></td>
+                            <td><%= sub_area.code_capes %></td>
+                            <td><%= sub_area.title %></td>
+                            <td><%= sub_area.description %></td>
+                            <td><%= sub_area.area.title %></td>
+                            <td><%= link_to 'Visualizar', sub_area %></td>
                             <td><%= link_to 'Editar', edit_sub_area_path(sub_area) %></td>
                             <td><%= link_to 'Deletar', sub_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>

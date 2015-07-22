@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721214911) do
+ActiveRecord::Schema.define(version: 20150722134116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150721214911) do
     t.integer  "great_area_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "code_capes"
   end
 
   add_index "areas", ["great_area_id"], name: "index_areas_on_great_area_id", using: :btree
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150721214911) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "code_capes"
   end
 
   create_table "institutes", force: :cascade do |t|
@@ -122,6 +124,17 @@ ActiveRecord::Schema.define(version: 20150721214911) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "project_participants", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "person_id"
+    t.integer  "role",        default: 0
+    t.integer  "weekly_time"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "project_participants", ["role"], name: "index_project_participants_on_role", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -178,6 +191,7 @@ ActiveRecord::Schema.define(version: 20150721214911) do
     t.integer  "sub_area_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "code_capes"
   end
 
   add_index "specialities", ["sub_area_id"], name: "index_specialities_on_sub_area_id", using: :btree
@@ -195,21 +209,10 @@ ActiveRecord::Schema.define(version: 20150721214911) do
     t.integer  "area_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "code_capes"
   end
 
   add_index "sub_areas", ["area_id"], name: "index_sub_areas_on_area_id", using: :btree
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "last_name"
-    t.string   "first_name"
-    t.integer  "person_id"
-  end
-
-  add_index "users", ["person_id"], name: "index_users_on_person_id", using: :btree
 
   add_foreign_key "activities", "projects"
   add_foreign_key "areas", "great_areas"
@@ -223,5 +226,4 @@ ActiveRecord::Schema.define(version: 20150721214911) do
   add_foreign_key "nature_financings", "institutes"
   add_foreign_key "specialities", "sub_areas"
   add_foreign_key "sub_areas", "areas"
-  add_foreign_key "users", "people"
 end

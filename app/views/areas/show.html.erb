@@ -7,19 +7,25 @@
             <% unless notice.nil? %>
                 <div class="alert"><%= notice %></div>
             <% end %>
-                            <div class="control-group span12 no-margin-left">
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Código Capes:</label>
+                    <div class="controls">
+                        <%= @area.code_capes %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
                     <label class="control-label">Título:</label>
                     <div class="controls">
                         <%= @area.title %>
                     </div>
                 </div>
-                            <div class="control-group span12 no-margin-left">
+                <div class="control-group span12 no-margin-left">
                     <label class="control-label">Descrição:</label>
                     <div class="controls">
                         <%= @area.description %>
                     </div>
                 </div>
-                            <div class="control-group span12 no-margin-left">
+                <div class="control-group span12 no-margin-left">
                     <label class="control-label">Grande Área:</label>
                     <div class="controls">
                         <%= @area.great_area.title %>

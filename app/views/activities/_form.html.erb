@@ -12,46 +12,45 @@
             </div>
         <% end %>
             <div class="control-group span6 no-margin-left">
-                <%= f.label :project, 'Projeto', class: 'control-label' %>
+                <%= f.label :project, 'Projeto:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :project_id, Project.all.collect {|p| [p.title]} %>
+                    <%= f.select :project_id, options_for_select(Project.all.map{|s|[s.title, s.id]}, :selected => @activity.project_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span6">
-                <%= f.label :description, 'Descrição', class: 'control-label' %>
+                <%= f.label :description, 'Descrição:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :description, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="clearfix"></div>
             <div class="control-group span6 no-margin-left">
-                <%= f.label :responsible_id, 'Responsável', class: 'control-label' %>
+                <%= f.label :responsible_id, 'Responsável:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :responsible_id, Person.all.collect {|p| [p.name, p.id ] } %>
+                    <%= f.select :responsible_id, options_for_select(Person.all.map{|s|[s.name, s.id]}, :selected => @activity.responsible_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :date_start, 'Data Inicio', class: 'control-label' %>
+            <div class="control-group span3">
+                <%= f.label :date_start, 'Data Início:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :date_start, required: true, class: 'input-block-level' %>
                 </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :date_end, 'Data Final', class: 'control-label' %>
+            <div class="control-group span3">
+                <%= f.label :date_end, 'Data Final:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :date_end, required: true, class: 'input-block-level' %>
                 </div>
             </div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :situation, 'Situação', class: 'control-label' %>
+            <div class="clearfix"></div>
+            <div class="control-group span3 no-margin-left">
+                <%= f.label :situation, 'Situação:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :situation, options_for_select(@situations.collect { |s| [s[0].humanize, s[0]] }, selected: @activity.situation), {}, required: true, class: "input-block-level" %>
+                    <%= f.select :situation, options_for_select(@situations.map { |s| [s[0].humanize, s[0]] }, :selected => @activity.situation), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :percent_run, 'Percentual de Execução (%)', class: 'control-label' %>
+            <div class="control-group span3">
+                <%= f.label :percent_run, 'Perc. de Exec. (%):', class: 'control-label' %>
                 <div class="controls">
                     <%= f.text_field :percent_run, required: true, class: 'input-block-level' %>
                 </div>

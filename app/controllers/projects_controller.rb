@@ -13,6 +13,12 @@ class ProjectsController < ApplicationController
   def show
   end
 
+  # GET /projects/add/1
+  # GET /projects/add/1.json
+  def add
+    @participant = ProjectParticipants.new
+  end
+
   # GET /projects/new
   def new
     @project = Project.new
@@ -70,6 +76,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :department, :date_start, :date_end, :keywords, :email, :category, :great_area, :area, :sub_area, :speciality, :research_group, :short_description, :introduction, :gols, :methodology, :references, :financial_institution, :nature_financing, :date_start_financing, :date_end_financing, :description_estimate, :value_estimate)
+      params.require(:project).permit(:title, :department_id, :date_start, :date_end, :keywords, :email, :category_id, :great_area_id, :area_id, :sub_area_id, :speciality_id, :research_group_id, :short_description, :introduction, :gols, :methodology, :references, :financial_institution_id, :nature_financing_id, :date_start_financing, :date_end_financing, :description_estimate, :value_estimate)
     end
 end

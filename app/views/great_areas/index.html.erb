@@ -12,9 +12,10 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Título</th>
-                                                    <th>Descrição</th>
-                                                <th></th>
+                        <th>Código Capes</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -22,9 +23,10 @@
                 <tbody>
                     <% @great_areas.each do |great_area| %>
                         <tr>
-                                                            <td><%= great_area.title %></td>
-                                                            <td><%= great_area.description %></td>
-                                                        <td><%= link_to 'Visualizar', great_area %></td>
+                            <td><%= great_area.code_capes %></td>
+                            <td><%= great_area.title %></td>
+                            <td><%= great_area.description %></td>
+                            <td><%= link_to 'Visualizar', great_area %></td>
                             <td><%= link_to 'Editar', edit_great_area_path(great_area) %></td>
                             <td><%= link_to 'Deletar', great_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>

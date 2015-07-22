@@ -70,6 +70,6 @@ class SubAreasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sub_area_params
-      params.require(:sub_area).permit(:title, :description, :area_id)
+      params.require(:sub_area).permit(:code_capes, :title, :description, :area_id)
     end
 end

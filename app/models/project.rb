@@ -8,4 +8,6 @@ class Project < ActiveRecord::Base
     belongs_to :research_group
     belongs_to :financial_institution
     belongs_to :nature_financing
+    
+    has_many :participants, class_name: :ProjectParticipant
 end

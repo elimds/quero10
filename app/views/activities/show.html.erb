@@ -10,7 +10,7 @@
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Projeto:</label>
                     <div class="controls">
-                        <%= @activity.project %>
+                        <%= @activity.project.title %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
@@ -26,15 +26,15 @@
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Data de Inicio:</label>
+                    <label class="control-label">Data Início:</label>
                     <div class="controls">
-                        <%= @activity.date_start %>
+                        <%= @activity.date_start.to_s(:custom) %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Data Final:</label>
                     <div class="controls">
-                        <%= @activity.date_end %>
+                        <%= @activity.date_end.to_s(:custom) %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Percentual de Execução:</label>
+                    <label class="control-label">Perc. de Exec. (%):</label>
                     <div class="controls">
                         <%= @activity.percent_run %>%
                     </div>
