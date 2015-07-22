@@ -12,14 +12,14 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Descrição</th>
-                                                    <th>Responsável</th>
-                                                    <th>Date Iníco</th>
-                                                    <th>Date Fim</th>
-                                                    <th>Situação</th>
-                                                    <th>Percentual</th>
-                                                    <th>Projeto</th>
-                                                <th></th>
+                        <th>Descrição</th>
+                        <th>Responsável</th>
+                        <th>Date Iníco</th>
+                        <th>Date Fim</th>
+                        <th>Situação</th>
+                        <th>Percentual</th>
+                        <th>Projeto</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -27,14 +27,14 @@
                 <tbody>
                     <% @activities.each do |activity| %>
                         <tr>
-                                                            <td><%= activity.description %></td>
-                                                            <td><%= activity.responsible.name %></td>
-                                                            <td><%= activity.date_start %></td>
-                                                            <td><%= activity.date_end %></td>
-                                                            <td><%= activity.situation %></td>
-                                                            <td><%= activity.percent_run %></td>
-                                                            <td><%= activity.project.title %></td>
-                                                        <td><%= link_to 'Visualizar', activity %></td>
+                            <td><%= activity.description %></td>
+                            <td><%= activity.responsible.name %></td>
+                            <td><%= activity.date_start.to_s(:custom) %></td>
+                            <td><%= activity.date_end.to_s(:custom) %></td>
+                            <td><%= activity.situation %></td>
+                            <td><%= activity.percent_run %></td>
+                            <td><%= activity.project.title %></td>
+                            <td><%= link_to 'Visualizar', activity %></td>
                             <td><%= link_to 'Editar', edit_activity_path(activity) %></td>
                             <td><%= link_to 'Deletar', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>

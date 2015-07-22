@@ -3,7 +3,7 @@
         
         <% if @person.errors.any? %>
             <div class="alert alert-error">
-                <h4><%= pluralize(@person.errors.count, "error") %> prohibited this pessoa from being saved:</h4>
+                <h4><%= pluralize(@person.errors.count, "error") %> não foi possível salvar este registro:</h4>
                 <ul>
                     <%= @person.errors.full_messages.each do |message| %>
                         <li><%= message %></li>

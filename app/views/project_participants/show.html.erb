@@ -1,36 +1,36 @@
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-list-alt"></i> Visualizar Área</h3>
+            <h3><i class="icon-list-alt"></i> Visualizar Participante</h3>
         </div>
         <div class="well no-padding">
             <% unless notice.nil? %>
                 <div class="alert"><%= notice %></div>
             <% end %>
                 <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Código Capes:</label>
+                    <label class="control-label">Projeto:</label>
                     <div class="controls">
-                        <%= @area.code_capes %>
+                        <%= @project_participant.project.title if @project_participant.project %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Título:</label>
+                    <label class="control-label">Participante:</label>
                     <div class="controls">
-                        <%= @area.title %>
+                        <%= @project_participant.person.name if @project_participant.person %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Descrição:</label>
+                    <label class="control-label">Função/Papel:</label>
                     <div class="controls">
-                        <%= @area.description %>
+                        <%= @project_participant.role %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
-                    <label class="control-label">Grande Área:</label>
+                    <label class="control-label">Carga Horária Semanal:</label>
                     <div class="controls">
-                        <%= @area.great_area.title %>
+                        <%= @project_participant.weekly_time %>
                     </div>
                 </div>
-                    </div>
+            </div>
     </div>
 </div>

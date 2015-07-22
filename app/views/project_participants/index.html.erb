@@ -1,0 +1,40 @@
+<div class="row-fluid link-cadastro">
+    <%= link_to new_project_participant_path do %>
+        <i class="icon-plus"></i> Adicionar project_participant
+    <% end %>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-th-list"></i> Lista de Participantes do Projeto</h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Projeto</th>
+                        <th>Participante</th>
+                        <th>Função</th>
+                        <th>Carga Horária Semanal</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @project_participants.each do |project_participant| %>
+                        <tr>
+                        <td><%= project_participant.project.title if project_participant.project %></td>
+                        <td><%= project_participant.person.name if project_participant.person %></td>
+                        <td><%= project_participant.role %></td>
+                        <td><%= project_participant.weekly_time %></td>
+                        <td><%= link_to 'Visualizar', project_participant %></td>
+                        <td><%= link_to 'Editar', edit_project_participant_path(project_participant) %></td>
+                        <td><%= link_to 'Deletar', project_participant, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

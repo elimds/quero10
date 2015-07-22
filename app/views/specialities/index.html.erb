@@ -12,10 +12,11 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Título</th>
-                                                    <th>Descrição</th>
-                                                    <th>Sub Área</th>
-                                                <th></th>
+                        <th>Código Capes</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Sub Área</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -23,10 +24,11 @@
                 <tbody>
                     <% @specialities.each do |speciality| %>
                         <tr>
-                                                            <td><%= speciality.title %></td>
-                                                            <td><%= speciality.description %></td>
-                                                            <td><%= speciality.sub_area.title %></td>
-                                                        <td><%= link_to 'Visualizar', speciality %></td>
+                            <td><%= speciality.code_capes %></td>
+                            <td><%= speciality.title %></td>
+                            <td><%= speciality.description %></td>
+                            <td><%= speciality.sub_area.title %></td>
+                            <td><%= link_to 'Visualizar', speciality %></td>
                             <td><%= link_to 'Editar', edit_speciality_path(speciality) %></td>
                             <td><%= link_to 'Deletar', speciality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>

@@ -69,6 +69,6 @@ class GreatAreasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def great_area_params
-      params.require(:great_area).permit(:title, :description)
+      params.require(:great_area).permit(:code_capes, :title, :description)
     end
 end

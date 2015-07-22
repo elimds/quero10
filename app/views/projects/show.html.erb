@@ -16,19 +16,19 @@
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Departamento:</label>
                     <div class="controls">
-                        <%= @project.department.name %>
+                        <%= @project.department.name if @project.department %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Data Início:</label>
                     <div class="controls">
-                        <%= @project.date_start %>
+                        <%= @project.date_start.to_s(:custom) %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Data Término:</label>
                     <div class="controls">
-                        <%= @project.date_end %>
+                        <%= @project.date_end.to_s(:custom) %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
@@ -130,15 +130,28 @@
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Data Início(fomento):</label>
                     <div class="controls">
-                        <%= @project.date_start_financing %>
+                        <%= @project.date_start_financing.to_s(:custom) %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Data Térm(fomento):</label>
                     <div class="controls">
-                        <%= @project.date_end_financing %>
+                        <%= @project.date_end_financing.to_s(:custom) %>
                     </div>
                 </div>
             </div>
+            <div class="clearfix"></div>
+            <div class="top-bar">
+                <h3><i class="icon-list-alt"></i>Participantes do Projeto</h3>
+            </div>
+            <div class="well no-padding">
+                
+                <div class="control-group span12 no-margin-left">
+                    <% @project.participants.each do |participant| %>
+                       <div class="controls" style="margin-left: 10px;"> <li><%= participant.person.name %> - <%= participant.role %> ( <%= participant.weekly_time %> horas/semana ) </li></div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="clearfix"></div>
     </div>
 </div>

@@ -28,13 +28,13 @@
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Data Início:</label>
                     <div class="controls">
-                        <%= @activity.date_start %>
+                        <%= @activity.date_start.to_s(:custom) %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">
                     <label class="control-label">Data Final:</label>
                     <div class="controls">
-                        <%= @activity.date_end %>
+                        <%= @activity.date_end.to_s(:custom) %>
                     </div>
                 </div>
                 <div class="control-group span12 no-margin-left">

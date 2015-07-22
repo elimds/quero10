@@ -1,0 +1,2 @@
+module ProjectParticipantsHelper
+end

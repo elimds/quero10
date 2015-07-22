@@ -12,6 +12,12 @@ class ProjectsController < ApplicationController
   def show
   end
 
+  # GET /projects/add/1
+  # GET /projects/add/1.json
+  def add
+    @participant = ProjectParticipants.new
+  end
+
   # GET /projects/new
   def new
     @project = Project.new
