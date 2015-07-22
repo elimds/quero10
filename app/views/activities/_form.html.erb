@@ -14,7 +14,7 @@
             <div class="control-group span6 no-margin-left">
                 <%= f.label :project, 'Projeto', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :project_id, Project.all.collect {|p| [p.title]} %>
+                    <%= f.select :project_id, Project.all.collect {|p| [p.title, p.id]} %>
                 </div>
             </div>
             <div class="control-group span6">
