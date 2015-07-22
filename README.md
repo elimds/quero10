@@ -38,4 +38,5 @@ Vinicius Cardoso Garcia
 * [Protótipos](https://drive.google.com/a/cin.ufpe.br/folderview?id=0BySLCnJXuwJWflM1akk1QUNURTZ3SXFpMUhCaE5PME52aHlPeDdyUzVaTlVmUDhfbUdKQkE&usp=sharing)
 
 * [Questionário] (https://docs.google.com/a/cin.ufpe.br/forms/d/1tROyTvhaTV464EBkh7uQq0qBtjHwclyXw2g-M-AWx2k/edit)
->>>>>>> 0010fbcd76e5dd1f0a8d7e18cb55ac259dcb39a1
+
+* [Atas de Reuniões](https://drive.google.com/open?id=0B7PcyAnAe0IifkIzejFrSVZmZU1jaWVYZXZyeVZpVkVCWGhNZndpR2tmLXRkUTd6RFJramc)
