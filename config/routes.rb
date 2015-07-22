@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'projects/:id/add' => 'projects#add', as: :add
   post 'projects/:id/addparticipator' => 'projects#add_participator', as: :addparticipator
   delete 'projects/:id/:id_participant/removeparticipator' => 'projects#remove_participator', as: :removeparticipator
+
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -28,7 +30,11 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  get 'signup'  => 'users#new'
+  get 'login'  => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

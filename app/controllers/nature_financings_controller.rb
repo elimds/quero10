@@ -1,4 +1,5 @@
 class NatureFinancingsController < ApplicationController
+  before_action :require_user
   before_action :set_nature_financing, only: [:show, :edit, :update, :destroy]
 
   # GET /nature_financings
