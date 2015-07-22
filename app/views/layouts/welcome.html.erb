@@ -41,7 +41,16 @@
 				<% else %>
 				<ul class="nav pull-right">
 					<li class="dropdown">
-					<li><%= link_to " Sair", logout_path, method: "delete", :class => "cadastro icon-off icon-white" %></li>
+						<a href="#">
+							<i class="icon-user icon-white"></i> 
+							<span class="hidden-phone"><% if current_user %><%= current_user.email %><% end %></span>
+						</a>
+					</li>
+					<li>
+						<%= link_to logout_path,  method: "delete" do %>
+						<i class="icon-off icon-white"></i>
+						<span class="hidden-phone">Logout</span>
+						<% end %>
 					</li>
 				</ul>
 				<% end %>
