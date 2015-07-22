@@ -21,7 +21,7 @@
             <div class="control-group span6 no-margin-left">
                 <%= f.label :department, 'Departamento', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :department_id, Department.all.collect {|d| [d.name, d.id] }, required: true %>
+                    <%= f.select :department_id, Department.all.collect {|d| [d.name, d.id] } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
@@ -51,13 +51,13 @@
             <div class="control-group span6 no-margin-left">
                 <%= f.label :category, 'Categoria', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :category_id, Category.all.collect {|c| [c.title, c.id] }, required: true %>
+                    <%= f.select :category_id, Category.all.collect {|c| [c.title, c.id] } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
                 <%= f.label :great_area, 'Grande Area', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :great_area_id, GreatArea.all.collect {|ga| [ga.title, ga.id] }, required:true %>
+                    <%= f.select :great_area_id, GreatArea.all.collect {|ga| [ga.title, ga.id] } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
@@ -130,13 +130,13 @@
             <div class="control-group span6 no-margin-left">
                 <%= f.label :financial_institution, 'Entidade Financiadora', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :financial_institution_id, FinancialInstitution.all.collect {|fi| [fi.name, fi.id] }, required: true %>
+                    <%= f.select :financial_institution_id, FinancialInstitution.all.collect {|fi| [fi.name, fi.id] } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
                 <%= f.label :nature_financing, 'Natureza do Financiamento', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :nature_financing_id, NatureFinancing.all.collect {|nf| [nf.title, fi.id] }, required: true %>
+                    <%= f.select :nature_financing_id, NatureFinancing.all.collect {|nf| [nf.title, nf.id] } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
