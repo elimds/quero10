@@ -18,9 +18,13 @@ Rails.application.routes.draw do
   resources :people
   
   get 'projects/:id/add' => 'projects#add', as: :add
+  
   post 'projects/:id/addparticipator' => 'projects#add_participator', as: :addparticipator
   delete 'projects/:id/:id_participant/removeparticipator' => 'projects#remove_participator', as: :removeparticipator
-
+  
+  post 'projects/:id/addactivity' => "projects#add_activity", as: :addactivity
+  delete 'projects/:id/:id_activity/removeactivity' => 'projects#remove_activity', as: :removeactivity 
+  
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

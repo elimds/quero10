@@ -214,6 +214,18 @@ ActiveRecord::Schema.define(version: 20150722134116) do
 
   add_index "sub_areas", ["area_id"], name: "index_sub_areas_on_area_id", using: :btree
 
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "person_id"
+  end
+
+  add_index "users", ["person_id"], name: "index_users_on_person_id", using: :btree
+
   add_foreign_key "activities", "projects"
   add_foreign_key "areas", "great_areas"
   add_foreign_key "categories", "institutes"
@@ -226,4 +238,5 @@ ActiveRecord::Schema.define(version: 20150722134116) do
   add_foreign_key "nature_financings", "institutes"
   add_foreign_key "specialities", "sub_areas"
   add_foreign_key "sub_areas", "areas"
+  add_foreign_key "users", "people"
 end

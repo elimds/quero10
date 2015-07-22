@@ -18,21 +18,38 @@
 			<!-- Top Fixed Bar: Container -->
 			<div class="container">
 
+				<% unless current_user %>
+				<%= form_for(:session, url: login_path) do |f| %>
 				<ul class="nav pull-right">
 					<li class="dropdown">
-						<a href="#" class="cadastro">
+						<a href="/signup" class="cadastro">
 							<i class="icon-edit icon-white"></i> 
 							<span>Cadastre-se!</span>
 						</a>
 					</li>
 					<li class="dropdown">
-						<input type="text" name="" placeholder="login">
+						<%= f.email_field :email, :placeholder => "Email" %> 
 					</li>
 					<li class="dropdown">
-						<input type="password" name="" placeholder="senha">
+						<%= f.password_field :password, :placeholder => "Senha" %> 
+					</li>
+					<li class="dropdown">
+						<%= f.submit "Enviar", :class => 'btn btn-primary', :style => 'margin:0px; width: 70px;' %>
 					</li>
 				</ul>
-
+				<% end %>
+				<% else %>
+				<ul class="nav pull-right">
+					<li class="dropdown">
+					<li><%= link_to " Sair", logout_path, method: "delete", :class => "cadastro icon-off icon-white" %></li>
+					</li>
+				</ul>
+				<% end %>
+        <% if flash[:error] %>
+        		<div class="clearfix"></div>
+            <div class="errorlogin"><%= flash[:error] %></div>
+        <% end %>
+				
 			</div>
 			<!-- / Top Fixed Bar: Container -->
 
