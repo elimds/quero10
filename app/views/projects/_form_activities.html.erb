@@ -1,6 +1,5 @@
 <div class="well no-padding">
-    <%= form_for(@activity, :html => { class: 'form-horizontal' }) do |f| %>
-        
+    <%= form_for(@activity, :url => { action: "add_activity"}, :html => { class: 'form-horizontal' }) do |f| %>
         <% if @activity.errors.any? %>
             <div class="alert alert-error">
                 <h4><%= pluralize(@activity.errors.count, "error") %> não foi possível salvar este registro:</h4>
@@ -11,12 +10,7 @@
                 </ul>
             </div>
         <% end %>
-            <div class="control-group span6 no-margin-left">
-                <%= f.label :project, 'Projeto:', class: 'control-label' %>
-                <div class="controls">
-                    <%= f.select :project_id, options_for_select(Project.all.map{|s|[s.title, s.id]}, :selected => @activity.project_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
-                </div>
-            </div>
+        <%= f.hidden_field :project_id, required: true, value: @project.id %>
             <div class="control-group span6">
                 <%= f.label :description, 'Descrição:', class: 'control-label' %>
                 <div class="controls">
@@ -33,13 +27,13 @@
             <div class="control-group span3">
                 <%= f.label :date_start, 'Data Início:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.text_field :date_start, required: true, class: 'input-block-level' %>
+                    <%= f.date_field :date_start, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="control-group span3">
                 <%= f.label :date_end, 'Data Final:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.text_field :date_end, required: true, class: 'input-block-level' %>
+                    <%= f.date_field :date_end, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="clearfix"></div>

@@ -38,23 +38,83 @@
                     </div>
                 </div>
             </div>
+            
             <div class="clearfix"></div>
-                    <div id="top2" class="top-bar">
-                        <h3><i class="icon-edit"></i> Adicionar Participantes</h3>
-                    </div>
-                    <%= render 'form_participants' %>
+            <div id="top2" class="top-bar">
+                <h3><i class="icon-edit"></i> Adicionar Atividades</h3>
+            </div>
+            <%= render 'form_activities' %>
+            
+            <div class="clearfix"></div>
+            <div id="top3" class="top-bar">
+                <h3><i class="icon-list-alt"></i>Atividades do Projeto</h3>
+            </div>
+            <div class="well no-padding">
+                <div class=" span12 no-margin-left">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Responsável</th>
+                                <th>Date Iníco</th>
+                                <th>Date Fim</th>
+                                <th>Situação</th>
+                                <th>Percentual</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <% @project.activities.each do |activity| %>
+                            <tr>
+                                <td><%= activity.description %></td>
+                                <td><%= activity.responsible.name %></td>
+                                <td><%= activity.date_start.to_s(:custom) %></td>
+                                <td><%= activity.date_end.to_s(:custom) %></td>
+                                <td><%= activity.situation %></td>
+                                <td><%= activity.percent_run %></td>
+                                <td><%= link_to 'Excluir', removeactivity_path(id: @project.id, id_activity: activity.id), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esta atividade do projeto?' } %></td>
+                            </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div id="top2" class="top-bar">
+                <h3><i class="icon-edit"></i> Adicionar Participantes</h3>
+            </div>
+            <%= render 'form_participants' %>
             <div class="clearfix"></div>
             <div id="top3" class="top-bar">
                 <h3><i class="icon-list-alt"></i>Participantes do Projeto</h3>
             </div>
             <div class="well no-padding">
                 <div class="control-group span12 no-margin-left">
-                    <% @project.participants.each do |participant| %>
-                       <div class="controls" style="margin-left: 10px;"> <li><%= participant.person.name %> - <%= participant.role %> ( <%= participant.weekly_time %> horas/semana ) <%= link_to '::Excluir Participante', removeparticipator_path(id: @project.id, id_participant: participant.id), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este participante do projeto?' } %></li></div>
-                    <% end %>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Participante</th>
+                                <th>Função</th>
+                                <th>Carga Horária Semanal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @project.participants.each do |project_participant| %>
+                                <tr>
+                                <td><%= project_participant.person.name if project_participant.person %></td>
+                                <td><%= project_participant.role %></td>
+                                <td><%= project_participant.weekly_time %></td>
+                                <td><%= link_to 'Excluir', removeparticipator_path(id: @project.id, id_participant: project_participant.id), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este participante do projeto?' } %></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="clearfix"></div>
+
         </div>
 </div>
 
