@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_action :require_user
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   # GET /activities

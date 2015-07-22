@@ -1,4 +1,5 @@
 class SubAreasController < ApplicationController
+  before_action :require_user
   before_action :set_sub_area, only: [:show, :edit, :update, :destroy]
 
   # GET /sub_areas

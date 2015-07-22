@@ -1,4 +1,5 @@
 class SpecialitiesController < ApplicationController
+  before_action :require_user
   before_action :set_speciality, only: [:show, :edit, :update, :destroy]
 
   # GET /specialities

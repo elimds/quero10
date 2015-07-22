@@ -41,7 +41,7 @@
 						<!-- User Navigation: User Link -->
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="icon-user icon-white"></i> 
-							<span class="hidden-phone">Anderson Maia</span>
+							<span class="hidden-phone"><% if current_user %><%= current_user.email %><% end %></span>
 						</a>
 						<!-- / User Navigation: User Link -->
 
@@ -56,13 +56,13 @@
 					
 					<!-- User Navigation: Logout -->
 						  <% if current_user %>
-								<li class="dropdown">	
-									<div align="right">
-									<a class="dropdown-toggle">
-										<i class="icon-off icon-white"></i>
-									</a>
-									</div>
-								</li>
+								<!--<li class="dropdown">	-->
+								<!--	<div align="right">-->
+								<!--	<a class="dropdown-toggle">-->
+								<!--		<i class="icon-off icon-white"></i>-->
+								<!--	</a>-->
+								<!--	</div>-->
+								<!--</li>-->
 								<li><%= link_to "Logout", logout_path, method: "delete" %></a></li>
 						  <% else %>
 						    <li><%= link_to "Login", 'login' %></a></li> 
