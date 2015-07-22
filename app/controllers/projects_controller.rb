@@ -13,11 +13,35 @@ class ProjectsController < ApplicationController
   end
 
   # GET /projects/add/1
-  # GET /projects/add/1.json
   def add
-    @participant = ProjectParticipants.new
+    set_project
+    @project_participant = ProjectParticipant.new
+    @roles = ProjectParticipant.roles
   end
 
+  # POST /projects/1/addparticipator
+  def add_participator
+    set_project
+    @project_participant = ProjectParticipant.new(participant_params)
+    respond_to do |format|
+      if @project_participant.save
+        format.html { redirect_to add_path, notice: 'Participante adicionado com sucesso.' }
+        format.json { render :add, status: :added, location: add_path}
+      else
+        format.html { render :add }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /projects/1/remove_participator
+  def remove_participator
+    set_project
+    @project_participant = ProjectParticipant.find(params[:id_participant])
+    @project_participant.destroy
+    redirect_to add_path(@project), notice: 'Participante removido com sucesso.'
+  end
+  
   # GET /projects/new
   def new
     @project = Project.new
@@ -73,8 +97,16 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
     end
 
+    def set_participant
+      @project_participant = ProjectParticipant.find(params[:id_participant])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:title, :department_id, :date_start, :date_end, :keywords, :email, :category_id, :great_area_id, :area_id, :sub_area_id, :speciality_id, :research_group_id, :short_description, :introduction, :gols, :methodology, :references, :financial_institution_id, :nature_financing_id, :date_start_financing, :date_end_financing, :description_estimate, :value_estimate)
+    end
+    
+    def participant_params
+      params.require(:project_participant).permit(:project_id, :person_id, :role, :weekly_time)
     end
 end
