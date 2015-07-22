@@ -1,0 +1,144 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-list-alt"></i> Visualizar Projeto</h3>
+        </div>
+        <div class="well no-padding">
+            <% unless notice.nil? %>
+                <div class="alert"><%= notice %></div>
+            <% end %>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Título:</label>
+                    <div class="controls">
+                        <%= @project.title %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Departamento:</label>
+                    <div class="controls">
+                        <%= @project.department %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Data Início:</label>
+                    <div class="controls">
+                        <%= @project.date_start %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Data Término:</label>
+                    <div class="controls">
+                        <%= @project.date_end %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Palavras-chave:</label>
+                    <div class="controls">
+                        <%= @project.keywords %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">E-mail:</label>
+                    <div class="controls">
+                        <%= @project.email %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Categoria:</label>
+                    <div class="controls">
+                        <%= @project.category.title if @project.category %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Grande-area:</label>
+                    <div class="controls">
+                        <%= @project.great_area.title if @project.great_area %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Área:</label>
+                    <div class="controls">
+                        <%= @project.area.title if @project.area %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Sub-area:</label>
+                    <div class="controls">
+                        <%= @project.sub_area.title if @project.sub_area %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Especialidade:</label>
+                    <div class="controls">
+                        <%= @project.speciality.title if @project.speciality %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Descrição Resumida:</label>
+                    <div class="controls">
+                        <%= @project.short_description %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Introdução/Justificativa:</label>
+                    <div class="controls">
+                        <%= @project.introduction %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Objetivos:</label>
+                    <div class="controls">
+                        <%= @project.gols %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Metodologia (Materiais e Métodos):</label>
+                    <div class="controls">
+                        <%= @project.methodology %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Referências:</label>
+                    <div class="controls">
+                        <%= @project.references %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Descrição do Orçamento:</label>
+                    <div class="controls">
+                        <%= @project.description_estimate %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Valor Total do Orçamento:</label>
+                    <div class="controls">
+                        <%= @project.value_estimate %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Entidade Financiadora:</label>
+                    <div class="controls">
+                        <%= @project.financial_institution.name if @project.financial_institution %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Natureza do Financiamento:</label>
+                    <div class="controls">
+                        <%= @project.nature_financing.title if @project.nature_financing %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Data Início (fomento):</label>
+                    <div class="controls">
+                        <%= @project.date_start_financing %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Data Término(fomento):</label>
+                    <div class="controls">
+                        <%= @project.date_end_financing %>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

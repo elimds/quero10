@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :projects
+  resources :research_groups
+  resources :activities
+  resources :financial_institutions
   resources :nature_financings
   resources :categories
   resources :specialities

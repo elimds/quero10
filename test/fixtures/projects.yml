@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  department: 
+  date_start: 
+  date_end: 
+  keywords: 
+  email: 
+  category: 
+  great_area: 
+  area: 
+  sub_area: 
+  speciality: 
+  research_group: 
+  short_description: 
+  introduction: 
+  gols: 
+  methodology: 
+  references: 
+  financial_institution: 
+  nature_financing: 
+  date_start_financing: 
+  date_end_financing: 
+  description_estimate: 
+  value_estimate: MyString
+
+two:
+  title: 
+  department: 
+  date_start: 
+  date_end: 
+  keywords: 
+  email: 
+  category: 
+  great_area: 
+  area: 
+  sub_area: 
+  speciality: 
+  research_group: 
+  short_description: 
+  introduction: 
+  gols: 
+  methodology: 
+  references: 
+  financial_institution: 
+  nature_financing: 
+  date_start_financing: 
+  date_end_financing: 
+  description_estimate: 
+  value_estimate: MyString

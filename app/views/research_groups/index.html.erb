@@ -1,0 +1,56 @@
+<div class="row-fluid link-cadastro">
+    <%= link_to new_research_group_path do %>
+        <i class="icon-plus"></i> Adicionar research_group
+    <% end %>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-th-list"></i> Lista de Research_groups</h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                                                    <th>Title</th>
+                                                    <th>Leader_id</th>
+                                                    <th>Vice_leader_id</th>
+                                                    <th>Area</th>
+                                                    <th>Sub_area</th>
+                                                    <th>Date_update</th>
+                                                    <th>Description</th>
+                                                    <th>Justification</th>
+                                                    <th>Institutions</th>
+                                                    <th>Infraestructure</th>
+                                                    <th>Laboratories</th>
+                                                    <th>Status</th>
+                                                <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @research_groups.each do |research_group| %>
+                        <tr>
+                                                            <td><%= research_group.title %></td>
+                                                            <td><%= research_group.leader_id %></td>
+                                                            <td><%= research_group.vice_leader_id %></td>
+                                                            <td><%= research_group.area %></td>
+                                                            <td><%= research_group.sub_area %></td>
+                                                            <td><%= research_group.date_update %></td>
+                                                            <td><%= research_group.description %></td>
+                                                            <td><%= research_group.justification %></td>
+                                                            <td><%= research_group.institutions %></td>
+                                                            <td><%= research_group.infraestructure %></td>
+                                                            <td><%= research_group.laboratories %></td>
+                                                            <td><%= research_group.status %></td>
+                                                        <td><%= link_to 'Visualizar', research_group %></td>
+                            <td><%= link_to 'Editar', edit_research_group_path(research_group) %></td>
+                            <td><%= link_to 'Deletar', research_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

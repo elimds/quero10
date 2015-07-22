@@ -1,0 +1,54 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-list-alt"></i> Visualizar Atividade</h3>
+        </div>
+        <div class="well no-padding">
+            <% unless notice.nil? %>
+                <div class="alert"><%= notice %></div>
+            <% end %>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Projeto:</label>
+                    <div class="controls">
+                        <%= @activity.project %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Descrição:</label>
+                    <div class="controls">
+                        <%= @activity.description %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Responsável:</label>
+                    <div class="controls">
+                        <%= @activity.responsible.name %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Data de Inicio:</label>
+                    <div class="controls">
+                        <%= @activity.date_start %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Data Final:</label>
+                    <div class="controls">
+                        <%= @activity.date_end %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Situação:</label>
+                    <div class="controls">
+                        <%= @activity.situation %>
+                    </div>
+                </div>
+                <div class="control-group span12 no-margin-left">
+                    <label class="control-label">Percentual de Execução:</label>
+                    <div class="controls">
+                        <%= @activity.percent_run %>%
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

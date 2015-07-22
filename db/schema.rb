@@ -16,6 +16,22 @@ ActiveRecord::Schema.define(version: 20150721214911) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "activities", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "responsible_id"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.integer  "situation",      default: 0
+    t.integer  "percent_run"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "project_id"
+  end
+
+  add_index "activities", ["project_id"], name: "index_activities_on_project_id", using: :btree
+  add_index "activities", ["responsible_id"], name: "index_activities_on_responsible_id", using: :btree
+  add_index "activities", ["situation"], name: "index_activities_on_situation", using: :btree
+
   create_table "areas", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -46,6 +62,22 @@ ActiveRecord::Schema.define(version: 20150721214911) do
 
   add_index "departments", ["institute_id"], name: "index_departments_on_institute_id", using: :btree
   add_index "departments", ["person_id"], name: "index_departments_on_person_id", using: :btree
+
+  create_table "financial_institutions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "number"
+    t.string   "district"
+    t.string   "city"
+    t.integer  "state_id"
+    t.string   "zip_code"
+    t.integer  "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "financial_institutions", ["person_id"], name: "index_financial_institutions_on_person_id", using: :btree
+  add_index "financial_institutions", ["state_id"], name: "index_financial_institutions_on_state_id", using: :btree
 
   create_table "great_areas", force: :cascade do |t|
     t.string   "title"
@@ -91,6 +123,55 @@ ActiveRecord::Schema.define(version: 20150721214911) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "department_id"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.string   "keywords"
+    t.string   "email"
+    t.integer  "category_id"
+    t.integer  "great_area_id"
+    t.integer  "area_id"
+    t.integer  "sub_area_id"
+    t.integer  "speciality_id"
+    t.integer  "research_group_id"
+    t.string   "short_description"
+    t.string   "introduction"
+    t.string   "gols"
+    t.string   "methodology"
+    t.string   "references"
+    t.integer  "financial_institution_id"
+    t.integer  "nature_financing_id"
+    t.date     "date_start_financing"
+    t.date     "date_end_financing"
+    t.string   "description_estimate"
+    t.string   "value_estimate"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "research_groups", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "leader_id"
+    t.integer  "vice_leader_id"
+    t.integer  "area_id"
+    t.integer  "sub_area_id"
+    t.date     "date_update"
+    t.string   "description"
+    t.string   "justification"
+    t.string   "institutions"
+    t.string   "infraestructure"
+    t.string   "laboratories"
+    t.integer  "status",          default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "research_groups", ["leader_id"], name: "index_research_groups_on_leader_id", using: :btree
+  add_index "research_groups", ["status"], name: "index_research_groups_on_status", using: :btree
+  add_index "research_groups", ["vice_leader_id"], name: "index_research_groups_on_vice_leader_id", using: :btree
+
   create_table "specialities", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -130,10 +211,13 @@ ActiveRecord::Schema.define(version: 20150721214911) do
 
   add_index "users", ["person_id"], name: "index_users_on_person_id", using: :btree
 
+  add_foreign_key "activities", "projects"
   add_foreign_key "areas", "great_areas"
   add_foreign_key "categories", "institutes"
   add_foreign_key "departments", "institutes"
   add_foreign_key "departments", "people"
+  add_foreign_key "financial_institutions", "people"
+  add_foreign_key "financial_institutions", "states"
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
   add_foreign_key "nature_financings", "institutes"

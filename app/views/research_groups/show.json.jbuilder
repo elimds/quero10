@@ -1,0 +1,1 @@
+json.extract! @research_group, :id, :title, :leader_id, :vice_leader_id, :area, :sub_area, :date_update, :description, :justification, :institutions, :infraestructure, :laboratories, :status, :created_at, :updated_at

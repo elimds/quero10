@@ -1,0 +1,93 @@
+<div class="well no-padding">
+    <%= form_for(@research_group, :html => { class: 'form-horizontal' }) do |f| %>
+        
+        <% if @research_group.errors.any? %>
+            <div class="alert alert-error">
+                <h4><%= pluralize(@research_group.errors.count, "error") %> prohibited this pessoa from being saved:</h4>
+                <ul>
+                    <% @research_group.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :title, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :title, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :leader_id, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :leader_id, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :vice_leader_id, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :vice_leader_id, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :area, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :area, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :sub_area, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :sub_area, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :date_update, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :date_update, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :description, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :description, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :justification, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :justification, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :institutions, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :institutions, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :infraestructure, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :infraestructure, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :laboratories, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :laboratories, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+                    <div class="control-group span6 no-margin-left">
+                <%= f.label :status, class: 'control-label' %>
+                <div class="controls">
+                    <%= f.text_field :status, required: true, class: 'input-block-level' %>
+                </div>
+            </div>
+            
+        <div class="clearfix"></div>
+        <div class="form-actions">
+            <%= f.submit ( f.object.new_record? ? "Cadastrar" : "Atualizar"), class: "btn btn-primary" %>
+        </div>
+    <% end %>
+</div>
