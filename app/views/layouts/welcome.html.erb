@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>.:: Quero 10 ::.</title>
+  <%= favicon_link_tag 'favicon.png' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <!-- Top Fixed Bar -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+
+		<!-- Top Fixed Bar: Navbar Inner -->
+		<div class="navbar-inner">
+
+			<!-- Top Fixed Bar: Container -->
+			<div class="container">
+
+				<ul class="nav pull-right">
+					<li class="dropdown">
+						<a href="#" class="cadastro">
+							<i class="icon-edit icon-white"></i> 
+							<span>Cadastre-se!</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<input type="text" name="" placeholder="login">
+					</li>
+					<li class="dropdown">
+						<input type="password" name="" placeholder="senha">
+					</li>
+				</ul>
+
+			</div>
+			<!-- / Top Fixed Bar: Container -->
+
+		</div>
+		<!-- / Top Fixed Bar: Navbar Inner -->
+
+	</div>
+	<!-- / Top Fixed Bar -->
+	
+	<!-- Content Container -->
+	<div class="container">
+	  
+    <%= yield %>
+    
+  </div>
+  <!-- / Content Container -->
+  
+  <!-- Footer -->
+	<footer class="footer">
+
+			<!-- Footer Container -->
+      <div class="container">
+        <p>Projetos de Pesquisa Quero 10</p>
+        <p>Github: <a href="https://github.com/elimds/quero10">https://github.com/elimds/quero10</a></p>
+      </div>
+      <!-- / Footer Container -->
+
+	</footer>
+	<!-- / Footer -->
+
+</body>
+</html>
