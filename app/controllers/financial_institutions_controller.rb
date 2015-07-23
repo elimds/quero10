@@ -1,4 +1,5 @@
 class FinancialInstitutionsController < ApplicationController
+  before_action :require_user
   before_action :set_financial_institution, only: [:show, :edit, :update, :destroy]
 
   # GET /financial_institutions

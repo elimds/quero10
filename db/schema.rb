@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722134116) do
+ActiveRecord::Schema.define(version: 20150723023622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,9 +121,13 @@ ActiveRecord::Schema.define(version: 20150722134116) do
     t.string   "lattes"
     t.string   "phone"
     t.string   "mobile_phone"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "institute_id"
+    t.integer  "category",     default: 0
   end
+
+  add_index "people", ["institute_id"], name: "index_people_on_institute_id", using: :btree
 
   create_table "project_participants", force: :cascade do |t|
     t.integer  "project_id"
@@ -214,6 +218,16 @@ ActiveRecord::Schema.define(version: 20150722134116) do
 
   add_index "sub_areas", ["area_id"], name: "index_sub_areas_on_area_id", using: :btree
 
+  create_table "users", force: :cascade do |t|
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "person_id"
+    t.string   "login"
+  end
+
+  add_index "users", ["person_id"], name: "index_users_on_person_id", using: :btree
+
   add_foreign_key "activities", "projects"
   add_foreign_key "areas", "great_areas"
   add_foreign_key "categories", "institutes"
@@ -224,6 +238,8 @@ ActiveRecord::Schema.define(version: 20150722134116) do
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
   add_foreign_key "nature_financings", "institutes"
+  add_foreign_key "people", "institutes"
   add_foreign_key "specialities", "sub_areas"
   add_foreign_key "sub_areas", "areas"
+  add_foreign_key "users", "people"
 end

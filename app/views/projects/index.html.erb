@@ -38,7 +38,7 @@
                             <td><%= project.area.title if project.area %> </td>
                             <td><%= project.sub_area.title if project.sub_area %> </td>
                             <td><%= project.value_estimate %> </td>
-                            <td><%= link_to 'Visualizar', project %> </td>
+                            <td><%= link_to 'Visualizar', add_path(project) %> </td>
                             <td><%= link_to 'Editar', edit_project_path(project) %> </td>
                             <td><%= link_to 'Deletar', project, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
                         </tr>

@@ -1,4 +1,5 @@
 class NatureFinancingsController < ApplicationController
+  before_action :require_user
   before_action :set_nature_financing, only: [:show, :edit, :update, :destroy]
 
   # GET /nature_financings
@@ -25,6 +26,7 @@ class NatureFinancingsController < ApplicationController
   # POST /nature_financings.json
   def create
     @nature_financing = NatureFinancing.new(nature_financing_params)
+    @nature_financing.institute = current_institute
 
     respond_to do |format|
       if @nature_financing.save

@@ -1,4 +1,5 @@
 class ResearchGroupsController < ApplicationController
+  before_action :require_user
   before_action :set_research_group, only: [:show, :edit, :update, :destroy]
 
   # GET /research_groups

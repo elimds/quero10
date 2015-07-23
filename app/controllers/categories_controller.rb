@@ -1,10 +1,12 @@
 class CategoriesController < ApplicationController
+  before_action :require_user
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    institute = current_institute
+    @categories = Category.where(institute_id: current_institute.id) 
   end
 
   # GET /categories/1

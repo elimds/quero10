@@ -1,5 +1,5 @@
 <div class="well no-padding">
-    <%= form_for(@project_participant, :html => { class: 'form-horizontal' }) do |f| %>
+    <%= form_for(@project_participant, :url => { action: "add_participator"}, :html => { class: 'form-horizontal' }) do |f| %>
         
         <% if @project_participant.errors.any? %>
             <div class="alert alert-error">
@@ -11,7 +11,7 @@
                 </ul>
             </div>
         <% end %>
-            <%= f.hidden_field :project_id %>
+            <%= f.hidden_field :project_id, required: true, value: @project.id %>
             <div class="control-group span6 no-margin-left">
                 <%= f.label :person, 'Participante: ', class: 'control-label' %>
                 <div class="controls">
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
-                <%= f.label :weekly_time, 'Carga Horária Semanal', class: 'control-label' %>
+                <%= f.label :weekly_time, 'CH Semanal:', class: 'control-label' %>
                 <div class="controls">
                     <%= f.number_field :weekly_time, required: true, class: 'input-block-level' %>
                 </div>

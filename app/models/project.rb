@@ -10,4 +10,5 @@ class Project < ActiveRecord::Base
     belongs_to :nature_financing
     
     has_many :participants, class_name: :ProjectParticipant
+    has_many :activities, class_name: :Activity
 end
