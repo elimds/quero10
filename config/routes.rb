@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   resources :great_areas
   resources :departments
   get 'welcome/index'
+  get 'calendar/index'
   root 'welcome#index'
-  
+  get 'calendar'=>'calendar#index'
   resources :institutes
   resources :people
   # The priority is based upon order of creation: first created -> highest priority.
