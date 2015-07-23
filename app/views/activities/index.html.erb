@@ -28,7 +28,7 @@
                     <% @activities.each do |activity| %>
                         <tr>
                             <td><%= activity.description %></td>
-                            <td><%= activity.responsible.name %></td>
+                            <td><%= activity.responsible.name if (activity.responsible.name) %></td>
                             <td><%= activity.date_start.to_s(:custom) %></td>
                             <td><%= activity.date_end.to_s(:custom) %></td>
                             <td><%= activity.situation %></td>
