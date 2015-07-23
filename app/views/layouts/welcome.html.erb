@@ -52,7 +52,7 @@
 				<%= form_for(:session, url: login_path) do |f| %>
 				<ul class="nav pull-right">
 					<li class="dropdown">
-						<a href="/signup" class="cadastro">
+						<a href="/search" class="cadastro">
 							<i class="icon-edit icon-white"></i> 
 							<span>Cadastre-se!</span>
 						</a>
@@ -71,9 +71,9 @@
 				<% else %>
 				<ul class="nav pull-right">
 					<li class="dropdown">
-						<a href="<%= edit_person_path(current_user.person) %>">
+						<a href="<%= edit_person_path(current_user.person) if current_user.person %>">
 							<i class="icon-user icon-white"></i> 
-							<span class="hidden-phone"><% if current_user %><%= current_user.person.name %><% end %></span>
+							<span class="hidden-phone"><% if current_user %><%= current_user.person.name if current_user.person %><% end %></span>
 						</a>
 					</li>
 					<li>

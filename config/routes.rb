@@ -29,12 +29,13 @@ Rails.application.routes.draw do
   #resources :users
   get 'users' => 'users#index', as: :users
   post 'users' => 'users#create'
-  
+  get 'search' => 'users#search_institute', as: :user_search_institute
   get 'users/new_person' => 'users#new_person', as: :user_new_person
   post 'users/create_person' => 'users#create_person', as: :user_create_person
   get 'users/new_institute' => 'users#new_institute', as: :user_new_institute
   post 'users/create_institute' => 'users#create_institute', as: :user_create_institute
-  get 'signup'  => 'users#new'
+  get 'signup'  => 'users#new', as: :signup
+  get 'signup/:institute_id'  => 'users#new', as: :signup_with_institute
   get 'login'  => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

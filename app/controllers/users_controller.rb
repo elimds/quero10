@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
     def new
+        destroy_session
+        set_institute
         @user = User.new
         @person = Person.new
         render layout: 'user'
@@ -17,7 +19,9 @@ class UsersController < ApplicationController
     end
     
     def search_institute
+      destroy_session
       @institutes = Institute.all
+      render layout: 'user'
     end
   
     # GET /users/new_person
@@ -30,10 +34,18 @@ class UsersController < ApplicationController
     def create_person
       set_user
       @person = Person.new(person_params)
+      if session[:institute_id]
+        set_institute 
+        @person.institute = @institute
+      end
       if @person.save
         @user.person = @person
         if @user.save
-          redirect_to user_new_institute_path, notice: 'Informações pessoais registradas com sucesso.'
+          if @person.institute
+            redirect_to calendar_path, notice: 'Informações registradas com sucesso.'
+          else
+            redirect_to user_new_institute_path, notice: 'Informações pessoais registradas com sucesso.'
+          end
         else
           render :new_person, :flash => { :error => "Não foi possível registrar suas informações." }
         end
@@ -67,7 +79,7 @@ class UsersController < ApplicationController
     
     private
     def user_params
-        params.require(:user).permit(:login, :password, :password_confirmation)
+        params.require(:user).permit(:login, :password, :password_confirmation, :institute_id)
     end
     
     def person_params
@@ -80,5 +92,22 @@ class UsersController < ApplicationController
     
     def set_user
         @user = User.find(session[:user_id])
+    end
+    
+    def set_institute
+      if params[:institute_id] || session[:institute_id]
+        begin
+          institute_id = (params[:institute_id] ? params[:institute_id] : session[:institute_id]) 
+          @institute = Institute.find(institute_id) 
+          session[:institute_id] = @institute.id
+          rescue ActiveRecord::RecordNotFound
+            redirect_to :user_search_institute, :flash => { :error => "Não foi possível encontrar o registro desta instituição." }
+        end
+      end
+    end
+    
+    def destroy_session
+        session[:user_id] = nil 
+        session[:institute_id] = nil
     end
 end

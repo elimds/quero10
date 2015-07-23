@@ -1,0 +1,42 @@
+<div class="clearfix">&nbsp;</div>
+<div class="row-fluid link-cadastro">
+	<ul class="nav pull-right">
+    	<li class="dropdown">
+    		<a href="/signup" class="cadastro">
+    			<i class="icon-plus icon-white"></i> 
+    			<span>Clique aqui, caso a instintuição não estaja listada</span>
+    		</a>
+    	</li>
+    </ul>
+    <div class="clearfix"></div>
+    <p class="lead"><i class="icon-comment"></i> Verifique se a instituição de ensino que você pertense esta listada na tabela abaixo e selecione-a caso encontre.</p>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="top-bar">
+            <h3><i class="icon-user"></i> Selecione sua instituição</h3>
+        </div>
+        <div class="well no-padding">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Estado</th>
+                        <th>Responsável</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @institutes.each do |institute| %>
+                        <tr>
+                            <td><%= link_to institute.name, signup_with_institute_path(institute) %></td>
+                            <td><%= institute.state.name if institute.state %></td>
+                            <td><%= institute.person.name if institute.person %></td>
+                            <td><%= link_to 'Selecionar', signup_with_institute_path(institute) %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
