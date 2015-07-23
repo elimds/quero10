@@ -77,81 +77,139 @@
 
 				<!-- Main Navigation: Nav -->
 				<ul class="nav">
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-plus"></i> Cadastrar <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<%= link_to new_great_area_path do %>
+              		<i class="icon-chevron-right"></i> Grandes Áreas
+            		<% end %>
+            	</li>
+            	<li>
+            		<%= link_to new_area_path do %>
+              		<i class="icon-chevron-right"></i> Áreas
+            		<% end %>
+            	</li>
+            	<li>
+            		<%= link_to new_sub_area_path do %>
+              		<i class="icon-chevron-right"></i> Sub Áreas
+            		<% end %>
+            	</li>
+            	<li>
+            		<%= link_to new_speciality_path do %>
+              		<i class="icon-chevron-right"></i> Especialidades
+            		<% end %>
+            	</li>
+            	<li>
+            		<%= link_to new_category_path do %>
+              		<i class="icon-chevron-right"></i> Categorias
+            		<% end %>
+            	</li>
+            	<li>
+            		<%= link_to new_department_path do %>
+              		<i class="icon-chevron-right"></i> Departamentos
+            		<% end %>
+            	</li>
+            	<li>
+            		<%= link_to new_nature_financing_path do %>
+              		<i class="icon-chevron-right"></i> Naturezas de Financiamento
+            		<% end %>
+            	</li>
+            	<li>
+            		<%= link_to new_financial_institution_path do %>
+              		<i class="icon-chevron-right"></i> Instituições de Fomento
+            		<% end %>
+            	</li>
+						</ul>
+					</li>
+					
 					<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="icon-th"></i> Áreas <b class="caret"></b>
+								<i class="icon-list"></i> Listar <b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
 								<li>
 									<%= link_to great_areas_path do %>
-	              		<i class="icon-circle"></i> Grandes Áreas
+	              		<i class="icon-chevron-right"></i> Grandes Áreas
 	            		<% end %>
 	            	</li>
 	            	<li>
 	            		<%= link_to areas_path do %>
-	              		<i class="icon-circle"></i> Áreas
+	              		<i class="icon-chevron-right"></i> Áreas
 	            		<% end %>
 	            	</li>
 	            	<li>
 	            		<%= link_to sub_areas_path do %>
-	              		<i class="icon-circle"></i> Sub Áreas
+	              		<i class="icon-chevron-right"></i> Sub Áreas
 	            		<% end %>
 	            	</li>
 	            	<li>
 	            		<%= link_to specialities_path do %>
-	              		<i class="icon-circle"></i> Especialidades
+	              		<i class="icon-chevron-right"></i> Especialidades
+	            		<% end %>
+	            	</li>
+	            	<li>
+	            		<%= link_to categories_path do %>
+	              		<i class="icon-chevron-right"></i> Categorias
+	            		<% end %>
+	            	</li>
+	            	<li>
+	            		<%= link_to departments_path do %>
+	              		<i class="icon-chevron-right"></i> Departamentos
+	            		<% end %>
+	            	</li>
+	            	<li>
+	            		<%= link_to nature_financings_path do %>
+	              		<i class="icon-chevron-right"></i> Naturezas de Financiamento
+	            		<% end %>
+	            	</li>
+	            	<li>
+	            		<%= link_to financial_institutions_path do %>
+	              		<i class="icon-chevron-right"></i> Instituições de Fomento
 	            		<% end %>
 	            	</li>
 							</ul>
 					</li>
-
-					<!-- Main Navigation: Pessoas -->
-          <li>
-            <%= link_to people_path do %>
-              <i class="icon-group"></i> Pessoas
-            <% end %>
-          </li>
-					<!-- / Main Navigation: Pessoas -->
 					
-					<!-- Main Navigation: Instituições -->
-          <li>
-            <%= link_to institutes_path do %>
-              <i class="icon-building"></i> Instituições
-            <% end %>
-          </li>
-					<!-- / Main Navigation: Instituições -->
+					<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-group"></i> Pessoas <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<%= link_to new_person_path do %>
+	              		<i class="icon-plus"></i> Cadastrar
+	            		<% end %>
+	            	</li>
+	            	<li>
+	            		<%= link_to people_path do %>
+	              		<i class="icon-list"></i> Listar
+	            		<% end %>
+	            	</li>
+							</ul>
+					</li>
 					
-					<!-- Main Navigation: Categorias -->
-          <li>
-            <%= link_to categories_path do %>
-              <i class="icon-building"></i> Categorias
-            <% end %>
-          </li>
-					<!-- / Main Navigation: Categorias -->
+					<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-file-text"></i> Projetos <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<%= link_to new_project_path do %>
+	              		<i class="icon-plus"></i> Cadastrar
+	            		<% end %>
+	            	</li>
+	            	<li>
+	            		<%= link_to projects_path do %>
+	              		<i class="icon-list"></i> Listar
+	            		<% end %>
+	            	</li>
+							</ul>
+					</li>
 					
-					<!-- Main Navigation: Natureza de financiamento -->
-          <li>
-            <%= link_to nature_financings_path do %>
-              <i class="icon-money"></i> Natureza de financiamento
-            <% end %>
-          </li>
-					<!-- / Main Navigation: Natureza de Financiamento -->
-
-					<!-- Main Navigation: Departamentos -->
-          <li>
-            <%= link_to departments_path do %>
-              <i class="icon-building"></i> Departamentos
-            <% end %>
-          </li>
-					<!-- / Main Navigation: Natureza de Financiamento -->
-					
-					<!-- Main Navigation: Departamentos -->
-          <li>
-            <%= link_to financial_institutions_path do %>
-              <i class="icon-building"></i> Instituições de Fomento
-            <% end %>
-          </li>
-					<!-- / Main Navigation: Natureza de Financiamento -->
 				</ul>
 				<!-- / Main Navigation: Nav -->
 
