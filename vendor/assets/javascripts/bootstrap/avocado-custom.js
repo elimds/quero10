@@ -1099,7 +1099,6 @@ if ($("select")[0]){
 
 $("input[name*='phone']").mask("(99)99999999?9");
 $("input[name*='zip_code']").mask("99999-999");
-$("input[name*='date']").mask("99/99/9999");
 
 
 // END: jQuery Waits for Document to Load

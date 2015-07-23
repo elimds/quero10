@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:institute_id] = @user.person.id
       session[:user_id] = @user.id
-      redirect_to projects_path
+      redirect_to calendar_path
     else
       redirect_to welcome_index_path, :flash => { :error => "Usuário ou senha incorreto." }
     end 
