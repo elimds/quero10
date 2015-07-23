@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = current_institute.projects
   end
 
   # GET /projects/1
@@ -122,7 +122,11 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      begin
+        @project = current_institute.projects.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+          redirect_to projects_path
+      end
     end
 
     def set_participant

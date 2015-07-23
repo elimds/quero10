@@ -66,7 +66,11 @@ class DepartmentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_department
-      @department = Department.find(params[:id])
+      begin
+        @department = current_institute.departments.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+          redirect_to departments_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
