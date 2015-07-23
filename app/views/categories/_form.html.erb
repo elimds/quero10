@@ -18,12 +18,6 @@
                     <%= f.text_field :title, required: true, class: 'input-block-level' %>
                 </div>
             </div>
-            <div class="control-group span6">
-                <%= f.label :institute, 'Instituição:', class: 'control-label' %>
-                <div class="controls">
-                    <%= f.select :institute_id, options_for_select(Institute.all.map{|s|[s.name, s.id]}, :selected => @category.institute_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
-                </div>
-            </div>
             <div class="control-group span12 no-margin-left">
                 <%= f.label :description, 'Descrição:', class: 'control-label' %>
                 <div class="controls">

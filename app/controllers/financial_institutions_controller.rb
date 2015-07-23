@@ -5,7 +5,7 @@ class FinancialInstitutionsController < ApplicationController
   # GET /financial_institutions
   # GET /financial_institutions.json
   def index
-    @financial_institutions = FinancialInstitution.all
+    @financial_institutions = FinancialInstitution.where(institute_id: current_institute.id)
   end
 
   # GET /financial_institutions/1
@@ -26,7 +26,8 @@ class FinancialInstitutionsController < ApplicationController
   # POST /financial_institutions.json
   def create
     @financial_institution = FinancialInstitution.new(financial_institution_params)
-
+    @financial_institution.institute = current_institute
+    
     respond_to do |format|
       if @financial_institution.save
         format.html { redirect_to @financial_institution, notice: 'Financial institution was successfully created.' }
@@ -65,7 +66,11 @@ class FinancialInstitutionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_financial_institution
-      @financial_institution = FinancialInstitution.find(params[:id])
+      begin
+        @financial_institution = current_institute.financial_institutions.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+          redirect_to financial_institutions_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

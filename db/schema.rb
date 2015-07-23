@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723023622) do
+ActiveRecord::Schema.define(version: 20150723161523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,10 +73,12 @@ ActiveRecord::Schema.define(version: 20150723023622) do
     t.integer  "state_id"
     t.string   "zip_code"
     t.integer  "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "institute_id"
   end
 
+  add_index "financial_institutions", ["institute_id"], name: "index_financial_institutions_on_institute_id", using: :btree
   add_index "financial_institutions", ["person_id"], name: "index_financial_institutions_on_person_id", using: :btree
   add_index "financial_institutions", ["state_id"], name: "index_financial_institutions_on_state_id", using: :btree
 
@@ -166,7 +168,10 @@ ActiveRecord::Schema.define(version: 20150723023622) do
     t.string   "value_estimate"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "institute_id"
   end
+
+  add_index "projects", ["institute_id"], name: "index_projects_on_institute_id", using: :btree
 
   create_table "research_groups", force: :cascade do |t|
     t.string   "title"
@@ -233,12 +238,14 @@ ActiveRecord::Schema.define(version: 20150723023622) do
   add_foreign_key "categories", "institutes"
   add_foreign_key "departments", "institutes"
   add_foreign_key "departments", "people"
+  add_foreign_key "financial_institutions", "institutes"
   add_foreign_key "financial_institutions", "people"
   add_foreign_key "financial_institutions", "states"
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
   add_foreign_key "nature_financings", "institutes"
   add_foreign_key "people", "institutes"
+  add_foreign_key "projects", "institutes"
   add_foreign_key "specialities", "sub_areas"
   add_foreign_key "sub_areas", "areas"
   add_foreign_key "users", "people"
