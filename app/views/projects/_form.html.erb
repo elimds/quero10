@@ -21,19 +21,19 @@
             <div class="control-group span6">
                 <%= f.label :department, 'Departamento:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :department_id, options_for_select(Department.where(institute_id: current_institute.id).map{|s|[s.name, s.id]}, :selected => @project.department_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :department_id, options_for_select( current_institute.departments.map{|s| [s.name, s.id]}, :selected => @project.department_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span3 no-margin-left">
                 <%= f.label :date_start, 'Data Início:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.date_field :date_start, required: true, min: Date.today, class: 'input-block-level' %>
+                    <%= f.date_field :date_start, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="control-group span3">
                 <%= f.label :date_end, 'Data Término:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.date_field :date_end, required: true, min: Date.today, class: 'input-block-level' %>
+                    <%= f.date_field :date_end, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             <div class="control-group span6">
@@ -51,7 +51,7 @@
             <div class="control-group span6">
                 <%= f.label :category, 'Categoria:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :category_id, options_for_select(Category.where(institute_id: current_institute.id).map{|s|[s.title, s.id]}, :selected => @project.category_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :category_id, options_for_select(current_institute.categories.map{|s| [s.title, s.id] }, :selected => @project.category_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
@@ -130,25 +130,25 @@
             <div class="control-group span4">
                 <%= f.label :financial_institution, 'Financiadora:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :financial_institution_id, options_for_select(FinancialInstitution.all.map{|s|[s.name, s.id]}, :selected => @project.financial_institution_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :financial_institution_id, options_for_select(current_institute.financial_institutions.map{|s|[s.name, s.id]}, :selected => @project.financial_institution_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span4">
                 <%= f.label :nature_financing, 'Natureza do Financ.:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :nature_financing_id, options_for_select(NatureFinancing.all.map{|s|[s.title, s.id]}, :selected => @project.nature_financing_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :nature_financing_id, options_for_select(current_institute.nature_financings.map{|s|[s.title, s.id]}, :selected => @project.nature_financing_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span4 no-margin-left">
                 <%= f.label :date_start_financing, 'Data Início(fomento):', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.date_field :date_start_financing, required: true, min: Date.today, class: 'input-block-level' %>
+                    <%= f.date_field :date_start_financing, required: true, class: 'input-block-level' %>
                 </div>
             </div>
                     <div class="control-group span4">
                 <%= f.label :date_end_financing, 'Data Térm(fomento):', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.date_field :date_end_financing, required: true, min: Date.today, class: 'input-block-level' %>
+                    <%= f.date_field :date_end_financing, required: true, class: 'input-block-level' %>
                 </div>
             </div>
             

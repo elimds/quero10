@@ -57,7 +57,7 @@
             <div class="control-group span8">
                 <%= f.label :person, 'Responsável:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :person_id, options_for_select(Person.all.map{|s|[s.name, s.id]}, :selected => @financial_institution.person_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :person_id, options_for_select(current_institute.people.map{|s|[s.name, s.id]}, :selected => @financial_institution.person_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
         <div class="clearfix"></div>
