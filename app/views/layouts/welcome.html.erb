@@ -70,6 +70,12 @@
 				<% end %>
 				<% else %>
 				<ul class="nav pull-right">
+					<li>
+						<%= link_to calendar_path do %>
+						<i class="icon-align-justify icon-white"></i>
+						<span class="hidden-phone">Dashboard</span>
+						<% end %>
+					</li>
 					<li class="dropdown">
 						<a href="<%= edit_person_path(current_user.person) if current_user.person %>">
 							<i class="icon-user icon-white"></i> 
