@@ -26,6 +26,7 @@ class NatureFinancingsController < ApplicationController
   # POST /nature_financings.json
   def create
     @nature_financing = NatureFinancing.new(nature_financing_params)
+    @nature_financing.institute = current_institute
 
     respond_to do |format|
       if @nature_financing.save

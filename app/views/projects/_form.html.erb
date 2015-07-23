@@ -21,7 +21,7 @@
             <div class="control-group span6">
                 <%= f.label :department, 'Departamento:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :department_id, options_for_select(Department.all.map{|s|[s.name, s.id]}, :selected => @project.department_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :department_id, options_for_select(Department.where(institute_id: current_institute.id).map{|s|[s.name, s.id]}, :selected => @project.department_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span3 no-margin-left">
@@ -51,7 +51,7 @@
             <div class="control-group span6">
                 <%= f.label :category, 'Categoria:', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :category_id, options_for_select(Category.all.map{|s|[s.title, s.id]}, :selected => @project.category_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :category_id, options_for_select(Category.where(institute_id: current_institute.id).map{|s|[s.title, s.id]}, :selected => @project.category_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">

@@ -26,6 +26,7 @@ class DepartmentsController < ApplicationController
   # POST /departments.json
   def create
     @department = Department.new(department_params)
+    @department.institute = current_institute
 
     respond_to do |format|
       if @department.save

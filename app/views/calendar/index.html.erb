@@ -1,0 +1,43 @@
+<div class="row-fluid welcome">
+    
+    
+    <div class="span8">
+    	<div class="top-bar">
+    		<ul class="tab-container">
+    		  <li class="active"><a href="#tab-1"><i class="icon-question"></i> O que é?</a></li>
+    		  <li><a href="#tab-2"><i class="icon-group"></i> Quem somos</a></li>
+    		</ul>
+    	</div>
+    	
+   
+<h3 id="month">
+    <%= link_to '<' ,:month =>(@date.beginning_of_month-1).strftime("%Y-%m-%d")  %>
+    <%=h @date.strftime("%B %Y")  %>
+    <%= link_to '>' ,:month =>(@date.end_of_month+1).strftime("%Y-%m-%d")  %>
+    
+</h3>
+<%= calendar_for @activities ,:year=>@date.year,:month=>@date.month do |calendar| %>
+  <%= calendar.head('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo') %>
+ <% calendar.day(:day_method =>:date_end) do |date,activities| %>
+ <div class="fc-day-content">
+      <%= date.day %>
+ </div>
+   
+    <% activities.each do |activity| %>
+    <span class="fc-event-title">
+      <%= h(activity.description) %>
+      </span>
+    <% end %>
+  <% end %>
+<% end %>
+
+<div id=calendar>
+    
+</div>
+    	
+    	
+    
+    	
+    		
+    </div>
+</div>
