@@ -73,7 +73,7 @@
 					<li class="dropdown">
 						<a href="<%= edit_person_path(current_user.person) %>">
 							<i class="icon-user icon-white"></i> 
-							<span class="hidden-phone"><% if current_user %><%= current_user.login %><% end %></span>
+							<span class="hidden-phone"><% if current_user %><%= current_user.person.name %><% end %></span>
 						</a>
 					</li>
 					<li>
