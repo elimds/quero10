@@ -5,7 +5,8 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    institute = current_institute
+    @categories = Category.where(institute_id: current_institute.id) 
   end
 
   # GET /categories/1

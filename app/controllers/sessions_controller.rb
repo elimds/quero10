@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
 	def create
     @user = User.find_by_login(params[:session][:login])
     if @user && @user.authenticate(params[:session][:password])
+      session[:institute_id] = @user.person.id
       session[:user_id] = @user.id
       redirect_to projects_path
     else

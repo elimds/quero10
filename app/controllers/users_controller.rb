@@ -51,6 +51,7 @@ class UsersController < ApplicationController
       if @institute.save
         @user.person.institute = @institute
         if @user.person.save
+          session[:institute_id] = @institute.id
           redirect_to projects_path, notice: 'Informações registradas com sucesso.'
         else
           render :new_institute, :flash => { :error => "Não foi possível registrar suas informações." }

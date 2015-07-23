@@ -6,16 +6,16 @@
 <div class="row-fluid">
     <div class="span12">
         <div class="top-bar">
-            <h3><i class="icon-th-list"></i> Lista de Categorias</h3>
+            <h3><i class="icon-th-list"></i> Lista de Categorias </h3>
         </div>
         <div class="well no-padding">
             <table class="data-table">
                 <thead>
                     <tr>
-                                                    <th>Título</th>
-                                                    <th>Descrição</th>
-                                                    <th>Instituição</th>
-                                                <th></th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Instituição</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -23,10 +23,10 @@
                 <tbody>
                     <% @categories.each do |category| %>
                         <tr>
-                                                            <td><%= category.title %></td>
-                                                            <td><%= category.description %></td>
-                                                            <td><%= category.institute.name %></td>
-                                                        <td><%= link_to 'Visualizar', category %></td>
+                            <td><%= category.title %></td>
+                            <td><%= category.description %></td>
+                            <td><%= category.institute.name %></td>
+                            <td><%= link_to 'Visualizar', category %></td>
                             <td><%= link_to 'Editar', edit_category_path(category) %></td>
                             <td><%= link_to 'Deletar', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         </tr>
