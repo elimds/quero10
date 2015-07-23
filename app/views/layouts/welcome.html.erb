@@ -58,7 +58,7 @@
 						</a>
 					</li>
 					<li class="dropdown">
-						<%= f.email_field :email, :placeholder => "Email" %> 
+						<%= f.text_field :login, :placeholder => "Login" %> 
 					</li>
 					<li class="dropdown">
 						<%= f.password_field :password, :placeholder => "Senha" %> 
@@ -73,7 +73,7 @@
 					<li class="dropdown">
 						<a href="#">
 							<i class="icon-user icon-white"></i> 
-							<span class="hidden-phone"><% if current_user %><%= current_user.email %><% end %></span>
+							<span class="hidden-phone"><% if current_user %><%= current_user.login %><% end %></span>
 						</a>
 					</li>
 					<li>
