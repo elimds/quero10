@@ -15,6 +15,10 @@ class UsersController < ApplicationController
         render :new, notice: 'Erro ao gravar seus dados.'
       end 
     end
+    
+    def search_institute
+      @institutes = Institute.all
+    end
   
     # GET /users/new_person
     def new_person

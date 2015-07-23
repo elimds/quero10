@@ -15,7 +15,7 @@
             <div class="control-group span6 no-margin-left">
                 <%= f.label :person, 'Participante: ', class: 'control-label' %>
                 <div class="controls">
-                    <%= f.select :person_id, options_for_select(Person.all.map{|p|[p.name, p.id]}, :selected => @project_participant.person_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
+                    <%= f.select :person_id, options_for_select(current_institute.people.map{|p|[p.name, p.id]}, :selected => @project_participant.person_id), {:include_blank => '- Selecione -'}, { :class => 'span12', :required => true } %>
                 </div>
             </div>
             <div class="control-group span6 no-margin-left">
