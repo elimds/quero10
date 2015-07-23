@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722134116) do
+ActiveRecord::Schema.define(version: 20150723013713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,7 +123,10 @@ ActiveRecord::Schema.define(version: 20150722134116) do
     t.string   "mobile_phone"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "institute_id"
   end
+
+  add_index "people", ["institute_id"], name: "index_people_on_institute_id", using: :btree
 
   create_table "project_participants", force: :cascade do |t|
     t.integer  "project_id"
@@ -236,6 +239,7 @@ ActiveRecord::Schema.define(version: 20150722134116) do
   add_foreign_key "institutes", "people"
   add_foreign_key "institutes", "states"
   add_foreign_key "nature_financings", "institutes"
+  add_foreign_key "people", "institutes"
   add_foreign_key "specialities", "sub_areas"
   add_foreign_key "sub_areas", "areas"
   add_foreign_key "users", "people"
