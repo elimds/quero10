@@ -66,7 +66,11 @@ class NatureFinancingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nature_financing
-      @nature_financing = NatureFinancing.find(params[:id])
+      begin
+        @nature_financing = current_institute.nature_financings.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+          redirect_to nature_financings_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
