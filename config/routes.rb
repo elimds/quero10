@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   delete 'projects/:id/:id_activity/removeactivity' => 'projects#remove_activity', as: :removeactivity 
   
   #resources :users
+  get 'users' => 'users#index', as: :users
+  post 'users' => 'users#create'
+  
   get 'users/new_person' => 'users#new_person', as: :user_new_person
   post 'users/create_person' => 'users#create_person', as: :user_create_person
   get 'users/new_institute' => 'users#new_institute', as: :user_new_institute

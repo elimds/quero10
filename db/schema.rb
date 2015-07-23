@@ -219,13 +219,11 @@ ActiveRecord::Schema.define(version: 20150723020239) do
   add_index "sub_areas", ["area_id"], name: "index_sub_areas_on_area_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "person_id"
+    t.string   "login"
   end
 
   add_index "users", ["person_id"], name: "index_users_on_person_id", using: :btree
